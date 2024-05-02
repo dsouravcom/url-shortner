@@ -16,7 +16,7 @@ function Home() {
       });
 
       if (response.status === 200) {
-        setUrl("http://localhost:8000/" + response.data.short_url);
+        setUrl("https://minilink.live/" + response.data.short_url);
         setOriginUrl(response.data.url);
         setResponse(true);
       }
