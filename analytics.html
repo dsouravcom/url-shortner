@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorti Analytics | Track Your Short URL Performance</title>
+    <meta
+      name="description"
+      content="Track clicks and view detailed analytics for your Sorti links"
+    />
+    <meta
+      name="keywords"
+      content="URL analytics, link tracking, Sorti analytics, Sorti stats"
+    />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      .gradient-bg {
+        background: linear-gradient(135deg, #4f46e5 0%, #10b981 100%);
+      }
+      .btn-primary {
+        background-color: #4f46e5;
+        transition: all 0.3s ease;
+      }
+      .btn-primary:hover {
+        background-color: #4338ca;
+        transform: translateY(-2px);
+      }
+      .analytics-card {
+        transition: all 0.3s ease;
+      }
+      .analytics-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+      #loadingSpinner {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex items-center">
+            <div class="flex-shrink-0 flex items-center">
+              <i class="text-primary size-10 text-2xl mr-2"><img src="favicon.svg" alt="Sorti Logo"></i>
+              <span class="text-xl font-bold text-gray-900">Shortly</span>
+            </div>
+          </div>
+          <div class="hidden sm:ml-6 sm:flex sm:items-center space-x-8">
+            <a
+              href="index.html"
+              class="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium"
+              >Home</a
+            >
+            <a
+              href="analytics.html"
+              class="text-indigo-600 px-3 py-2 text-sm font-medium"
+              >Analytics</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Analytics Header -->
+    <div class="gradient-bg text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1
+            class="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl mb-4"
+          >
+            Sorti URL Analytics Tracker
+          </h1>
+          <p class="max-w-2xl mx-auto text-xl text-blue-100">
+            View detailed click statistics for your short URLs
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Analytics Form -->
+    <div class="py-12 bg-white">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gray-50 rounded-lg shadow-md p-6">
+          <div class="text-center mb-6">
+            <h2 class="text-2xl font-bold text-gray-900">
+              Enter Your Short URL
+            </h2>
+            <p class="mt-2 text-gray-600">
+              Paste your Sorti URL to view its analytics
+            </p>
+          </div>
+
+          <div class="flex flex-col md:flex-row gap-4">
+            <input
+              type="url"
+              id="analyticsUrl"
+              placeholder="https://sorti.in/abc123"
+              class="flex-grow px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              required
+            />
+            <button
+              id="fetchAnalyticsBtn"
+              class="btn-primary px-6 py-3 rounded-lg font-medium text-white"
+            >
+              View Analytics
+            </button>
+          </div>
+
+          <div id="loadingSpinner" class="mt-4 text-center">
+            <div class="inline-flex items-center">
+              <svg
+                class="animate-spin -ml-1 mr-3 h-5 w-5 text-indigo-600"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  class="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  stroke-width="4"
+                ></circle>
+                <path
+                  class="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                ></path>
+              </svg>
+              <span>Fetching analytics data...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Analytics Results -->
+    <div id="analyticsResults" class="py-12 bg-gray-50 hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-lg shadow-md overflow-hidden mb-8">
+          <div class="p-6">
+            <h2 class="text-xl font-bold text-gray-900 mb-4">
+              Analytics Summary
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="analytics-card bg-gray-50 rounded-lg p-6">
+                <div class="flex items-center">
+                  <div
+                    class="p-3 rounded-full bg-indigo-100 text-indigo-600 mr-4"
+                  >
+                    <i class="fas fa-mouse-pointer"></i>
+                  </div>
+                  <div>
+                    <p class="text-sm font-medium text-gray-500">
+                      Total Clicks
+                    </p>
+                    <p
+                      class="text-2xl font-bold text-gray-900"
+                      id="totalClicks"
+                    >
+                      0
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="analytics-card bg-gray-50 rounded-lg p-6">
+                <div class="flex items-center">
+                  <div
+                    class="p-3 rounded-full bg-green-100 text-green-600 mr-4"
+                  >
+                    <i class="fas fa-calendar-day"></i>
+                  </div>
+                  <div>
+                    <p class="text-sm font-medium text-gray-500">First Click</p>
+                    <p class="text-2xl font-bold text-gray-900" id="firstClick">
+                      -
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="analytics-card bg-gray-50 rounded-lg p-6">
+                <div class="flex items-center">
+                  <div class="p-3 rounded-full bg-blue-100 text-blue-600 mr-4">
+                    <i class="fas fa-clock"></i>
+                  </div>
+                  <div>
+                    <p class="text-sm font-medium text-gray-500">Last Click</p>
+                    <p class="text-2xl font-bold text-gray-900" id="lastClick">
+                      -
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="p-6">
+              <h2 class="text-xl font-bold text-gray-900 mb-4">
+                Clicks Over Time
+              </h2>
+              <div class="h-80">
+                <canvas id="clicksChart"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="p-6">
+              <h2 class="text-xl font-bold text-gray-900 mb-4">
+                Daily Click Data
+              </h2>
+              <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                  <thead class="bg-gray-50">
+                    <tr>
+                      <th
+                        scope="col"
+                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      >
+                        Date
+                      </th>
+                      <th
+                        scope="col"
+                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      >
+                        Clicks
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    id="clickDataTable"
+                    class="bg-white divide-y divide-gray-200"
+                  >
+                    <!-- Data will be inserted here by JavaScript -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error Message -->
+    <div
+      id="errorMessage"
+      class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 hidden"
+    >
+      <div class="bg-white rounded-lg shadow-xl p-6 max-w-md w-full">
+        <div class="flex justify-between items-start">
+          <h3 class="text-lg font-medium text-gray-900" id="errorTitle">
+            Error
+          </h3>
+          <button id="closeErrorBtn" class="text-gray-400 hover:text-gray-500">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="mt-4">
+          <p class="text-sm text-gray-500" id="errorText">
+            An error occurred while fetching analytics data.
+          </p>
+        </div>
+        <div class="mt-6 text-right">
+          <button
+            id="confirmErrorBtn"
+            class="btn-primary px-4 py-2 rounded-md text-sm font-medium text-white"
+          >
+            OK
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+      <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div>
+            <h3
+              class="text-sm font-semibold text-gray-300 tracking-wider uppercase"
+            >
+              Product
+            </h3>
+            <ul class="mt-4 space-y-4">
+              <li>
+                <a
+                  href="#features"
+                  class="text-base text-gray-400 hover:text-white"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#how-it-works"
+                  class="text-base text-gray-400 hover:text-white"
+                  >How It Works</a
+                >
+              </li>
+              <li>
+                <a
+                  href="support.html"
+                  class="text-base text-gray-400 hover:text-white"
+                  >Support</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- <div>
+                <h3
+                  class="text-sm font-semibold text-gray-300 tracking-wider uppercase"
+                >
+                  Legal
+                </h3>
+                <ul class="mt-4 space-y-4">
+                  <li>
+                    <a href="#" class="text-base text-gray-400 hover:text-white"
+                      >Privacy</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-base text-gray-400 hover:text-white"
+                      >Terms</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-base text-gray-400 hover:text-white"
+                      >Cookie Policy</a
+                    >
+                  </li>
+                </ul>
+              </div> -->
+          <div>
+            <h3
+              class="text-sm font-semibold text-gray-300 tracking-wider uppercase"
+            >
+              Connect
+            </h3>
+            <ul class="mt-4 space-y-4">
+              <li>
+                <a href="#" class="text-base text-gray-400 hover:text-white"
+                  >Twitter</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-base text-gray-400 hover:text-white"
+                  >GitHub</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="mt-12 border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-base text-gray-400">
+            &copy; <span id="currentYear"></span> Sorti. All rights reserved.
+          </p>
+          <div class="mt-4 md:mt-0 flex space-x-6">
+            <a href="#" class="text-gray-400 hover:text-white">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Set current year in footer
+        document.getElementById("currentYear").textContent =
+          new Date().getFullYear();
+
+        const fetchBtn = document.getElementById("fetchAnalyticsBtn");
+        const analyticsUrl = document.getElementById("analyticsUrl");
+        const analyticsResults = document.getElementById("analyticsResults");
+        const loadingSpinner = document.getElementById("loadingSpinner");
+        const errorMessage = document.getElementById("errorMessage");
+        const closeErrorBtn = document.getElementById("closeErrorBtn");
+        const confirmErrorBtn = document.getElementById("confirmErrorBtn");
+
+        let clicksChart = null;
+
+        // Function to show error message
+        function showError(title, message) {
+          document.getElementById("errorTitle").textContent = title;
+          document.getElementById("errorText").textContent = message;
+          errorMessage.classList.remove("hidden");
+        }
+
+        // Close error message
+        closeErrorBtn.addEventListener("click", () =>
+          errorMessage.classList.add("hidden")
+        );
+        confirmErrorBtn.addEventListener("click", () =>
+          errorMessage.classList.add("hidden")
+        );
+
+        // Fetch analytics data
+        fetchBtn.addEventListener("click", async function () {
+          const url = analyticsUrl.value.trim();
+
+          if (!url) {
+            showError("Input Error", "Please enter a URL to analyze");
+            return;
+          }
+
+          // validate URL with advance regex
+          const urlPattern =
+            /^(https?:\/\/)?(www\.)?shortly\.cc\/[a-zA-Z0-9]+$/;
+          if (!urlPattern.test(url)) {
+            showError(
+              "Invalid URL",
+              "Please enter a valid Shortly URL (e.g., https://shortly.cc/abc123)"
+            );
+            return;
+          }
+
+          // Extract the short code from the URL
+          let shortCode;
+          try {
+            const urlObj = new URL(url);
+            shortCode = urlObj.pathname.substring(1); // Remove leading slash
+          } catch (e) {
+            showError("Invalid URL", "Please enter a valid Shortly URL");
+            return;
+          }
+
+          if (!shortCode) {
+            showError(
+              "Invalid URL",
+              "The URL should contain a short code (e.g., https://sorti.in/abc123)"
+            );
+            return;
+          }
+
+          // Show loading spinner
+          loadingSpinner.style.display = "block";
+          analyticsResults.classList.add("hidden");
+
+          try {
+            // Fetch data from API
+            const response = await fetch(
+              `http://localhost:8000/analytics/${shortCode}`
+            );
+
+            if (!response.ok) {
+              throw new Error(
+                `API request failed with status ${response.status}`
+              );
+            }
+
+            const data = await response.json();
+
+            // Update summary data
+            document.getElementById("totalClicks").textContent = data.totalView;
+
+            // Process analytics data
+            const clicksByDate = {};
+            let firstClickDate = null;
+            let lastClickDate = null;
+
+            // Convert timestamps to dates and group by day
+            data.analytics.forEach((item) => {
+              // Convert timestamp to Date object
+              const clickDate = new Date(item.timeStamp);
+
+              // Format date as YYYY-MM-DD for consistent grouping
+              const dateKey = clickDate.toISOString().split("T")[0];
+
+              // Count clicks per day
+              if (!clicksByDate[dateKey]) {
+                clicksByDate[dateKey] = 0;
+              }
+              clicksByDate[dateKey]++;
+
+              // Track first and last click dates
+              if (!firstClickDate || clickDate < firstClickDate) {
+                firstClickDate = clickDate;
+              }
+              if (!lastClickDate || clickDate > lastClickDate) {
+                lastClickDate = clickDate;
+              }
+            });
+
+            // Update first and last click dates with formatted dates
+            if (firstClickDate) {
+              document.getElementById("firstClick").textContent =
+                firstClickDate.toLocaleDateString();
+            }
+            if (lastClickDate) {
+              document.getElementById("lastClick").textContent =
+                lastClickDate.toLocaleDateString();
+            }
+
+            // Prepare data for chart and table
+            const sortedAnalytics = Object.entries(clicksByDate).sort(
+              (a, b) => {
+                return new Date(a[0]) - new Date(b[0]);
+              }
+            );
+
+            const dates = sortedAnalytics.map((item) => item[0]);
+            const clicks = sortedAnalytics.map((item) => item[1]);
+
+            // Update click data table
+            const tableBody = document.getElementById("clickDataTable");
+            tableBody.innerHTML = "";
+
+            sortedAnalytics.forEach(([date, count]) => {
+              const row = document.createElement("tr");
+              const dateCell = document.createElement("td");
+              const clicksCell = document.createElement("td");
+
+              dateCell.className =
+                "px-6 py-4 whitespace-nowrap text-sm text-gray-500";
+              dateCell.textContent = new Date(date).toLocaleDateString();
+
+              clicksCell.className =
+                "px-6 py-4 whitespace-nowrap text-sm text-gray-900";
+              clicksCell.textContent = count;
+
+              row.appendChild(dateCell);
+              row.appendChild(clicksCell);
+              tableBody.appendChild(row);
+            });
+
+            // Create or update chart
+            const ctx = document.getElementById("clicksChart").getContext("2d");
+
+            if (clicksChart) {
+              clicksChart.destroy();
+            }
+
+            clicksChart = new Chart(ctx, {
+              type: "line",
+              data: {
+                labels: dates.map((date) =>
+                  new Date(date).toLocaleDateString()
+                ),
+                datasets: [
+                  {
+                    label: "Clicks",
+                    data: clicks,
+                    backgroundColor: "rgba(79, 70, 229, 0.1)",
+                    borderColor: "#4F46E5",
+                    borderWidth: 2,
+                    tension: 0.4,
+                    fill: true,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  legend: {
+                    display: false,
+                  },
+                },
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    ticks: {
+                      precision: 0,
+                    },
+                  },
+                },
+              },
+            });
+
+            // Show results
+            analyticsResults.classList.remove("hidden");
+          } catch (error) {
+            console.error("Error fetching analytics:", error);
+            showError(
+              "API Error",
+              "Failed to fetch analytics data. Please check the URL and try again."
+            );
+          } finally {
+            loadingSpinner.style.display = "none";
+          }
+        });
+
+        // Allow pressing Enter in the input field
+        analyticsUrl.addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            fetchBtn.click();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

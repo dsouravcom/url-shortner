@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support Sorti | Keep Our URL Shortener Free & Ad-Free</title>
+    <meta
+      name="description"
+      content="Support Sorti to keep our URL shortener service free, ad-free, and accessible to everyone. Choose from monthly supporter plans or one-time donations."
+    />
+    <meta
+      name="keywords"
+      content="support URL shortener, donate to Sorti, premium URL shortener, ad-free link shortener, contribute to Sorti"
+    />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#4F46E5",
+              secondary: "#10B981",
+              dark: "#1F2937",
+              light: "#F9FAFB",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .gradient-bg {
+        background: linear-gradient(135deg, #4f46e5 0%, #10b981 100%);
+      }
+      .btn-primary {
+        background-color: #4f46e5;
+        transition: all 0.3s ease;
+      }
+      .btn-primary:hover {
+        background-color: #4338ca;
+        transform: translateY(-2px);
+      }
+      .btn-secondary {
+        background-color: #10b981;
+        transition: all 0.3s ease;
+      }
+      .btn-secondary:hover {
+        background-color: #0d9f6e;
+        transform: translateY(-2px);
+      }
+      .support-card {
+        transition: all 0.3s ease;
+      }
+      .support-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+      .highlight-card {
+        position: relative;
+        overflow: hidden;
+      }
+      .highlight-card::before {
+        content: "POPULAR";
+        position: absolute;
+        top: 0;
+        right: -30px;
+        background-color: #4f46e5;
+        color: white;
+        padding: 2px 40px;
+        font-size: 12px;
+        font-weight: bold;
+        transform: rotate(45deg);
+        transform-origin: left top;
+      }
+    </style>
+  </head>
+  <body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex items-center">
+            <div class="flex-shrink-0 flex items-center">
+              <i class="text-primary size-10 text-2xl mr-2"><img src="favicon.svg" alt="Sorti Logo"></i>
+              <span class="text-xl font-bold text-dark">Sorti</span>
+            </div>
+          </div>
+          <div class="hidden sm:ml-6 sm:flex sm:items-center space-x-8">
+            <a
+              href="index.html"
+              class="text-gray-500 hover:text-dark px-3 py-2 text-sm font-medium"
+              >Home</a
+            >
+            <a
+              href="index.html#features"
+              class="text-gray-500 hover:text-dark px-3 py-2 text-sm font-medium"
+              >Features</a
+            >
+            <a
+              href="index.html#about"
+              class="text-gray-500 hover:text-dark px-3 py-2 text-sm font-medium"
+              >About</a
+            >
+            <a
+              href="support.html"
+              class="text-primary px-3 py-2 text-sm font-medium"
+              >Support</a
+            >
+          </div>
+          <div class="sm:hidden flex items-center">
+            <!-- Mobile menu button -->
+            <button
+              type="button"
+              class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-dark hover:bg-gray-100 focus:outline-none"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="gradient-bg text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1
+            class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl mb-6"
+          >
+            Support Sorti's Mission
+          </h1>
+          <p class="max-w-2xl mx-auto text-xl text-blue-100">
+            Help us keep Sorti free, ad-free, and accessible to everyone
+            worldwide.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why Support Section -->
+    <div class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2 class="text-3xl font-extrabold text-dark sm:text-4xl">
+            Why Your Support Matters
+          </h2>
+          <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+            Sorti relies on community support to maintain our service without
+            ads or data selling.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-8 md:grid-cols-3">
+          <div class="support-card p-8 bg-light rounded-lg shadow-md">
+            <div
+              class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white"
+            >
+              <i class="fas fa-ad"></i>
+            </div>
+            <h3 class="mt-6 text-lg font-medium text-dark">No Ads, Ever</h3>
+            <p class="mt-2 text-gray-500">
+              Your support helps us maintain Sorti without resorting to annoying
+              advertisements or sponsored links.
+            </p>
+          </div>
+
+          <div class="support-card p-8 bg-light rounded-lg shadow-md">
+            <div
+              class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white"
+            >
+              <i class="fas fa-lock"></i>
+            </div>
+            <h3 class="mt-6 text-lg font-medium text-dark">
+              Privacy Protection
+            </h3>
+            <p class="mt-2 text-gray-500">
+              We don't sell or share user data. Your contributions allow us to
+              maintain this commitment.
+            </p>
+          </div>
+
+          <div class="support-card p-8 bg-light rounded-lg shadow-md">
+            <div
+              class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white"
+            >
+              <i class="fas fa-server"></i>
+            </div>
+            <h3 class="mt-6 text-lg font-medium text-dark">
+              Service Reliability
+            </h3>
+            <p class="mt-2 text-gray-500">
+              Support helps cover server costs and ensures 99.9% uptime for all
+              your shortened links.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Impact Section -->
+    <div class="py-16 bg-primary text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2 class="text-3xl font-extrabold sm:text-4xl">
+            Our Collective Impact
+          </h2>
+          <p class="mt-4 max-w-2xl text-xl text-blue-100 mx-auto">
+            Together, we're building a better internet.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-8 md:grid-cols-3 text-center">
+          <div>
+            <div class="text-5xl font-extrabold">10K+</div>
+            <div class="mt-2 text-lg font-medium text-blue-100">
+              Links shortened
+            </div>
+          </div>
+          <div>
+            <div class="text-5xl font-extrabold">100%</div>
+            <div class="mt-2 text-lg font-medium text-blue-100">
+              Ad-free experience
+            </div>
+          </div>
+          <div>
+            <div class="text-5xl font-extrabold">99+</div>
+            <div class="mt-2 text-lg font-medium text-blue-100">
+              Supporters worldwide
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <p class="max-w-2xl mx-auto text-blue-100">
+            Every contribution, no matter the size, helps us maintain and
+            improve Sorti without compromising our values.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2 class="text-3xl font-extrabold text-dark sm:text-4xl">
+            Support FAQs
+          </h2>
+          <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+            Answers to common questions about supporting Sorti.
+          </p>
+        </div>
+
+        <div class="mt-12">
+          <div class="space-y-6 max-w-3xl mx-auto">
+            <div class="bg-white shadow overflow-hidden rounded-lg">
+              <div class="px-4 py-5 sm:p-6">
+                <h3 class="text-lg font-medium text-dark">
+                  How is my support used?
+                </h3>
+                <p class="mt-2 text-gray-500">
+                  Your contributions go directly toward server costs,
+                  development, and maintaining our infrastructure.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white shadow overflow-hidden rounded-lg">
+              <div class="px-4 py-5 sm:p-6">
+                <h3 class="text-lg font-medium text-dark">
+                  Are there other ways to support Sorti?
+                </h3>
+                <p class="mt-2 text-gray-500">
+                  Absolutely! You can contribute code on GitHub, help translate
+                  Sorti into other languages, or simply tell others about our
+                  service. Every bit helps!
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white shadow overflow-hidden rounded-lg">
+              <div class="px-4 py-5 sm:p-6">
+                <h3 class="text-lg font-medium text-dark">
+                  How long do shortened URLs last?
+                </h3>
+                <p class="mt-2 text-gray-500">
+                  Your shortened URLs will never expire as long as Sorti exists.
+                  We're committed to maintaining all links indefinitely.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-extrabold text-dark sm:text-4xl">
+          Ready to Support Sorti?
+        </h2>
+        <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+          Join our community of supporters keeping the internet free and open.
+        </p>
+        <div class="mt-8 flex justify-center space-x-4">
+          <a
+            href="https://ko-fi.com/souravdotdev"
+            class="btn-primary px-6 py-3 rounded-lg font-medium text-white"
+          >
+            Become a Supporter
+          </a>
+          <a
+            href="https://ko-fi.com/souravdotdev"
+            class="btn-secondary px-6 py-3 rounded-lg font-medium text-white"
+          >
+            Make a Donation
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white">
+      <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div>
+            <h3
+              class="text-sm font-semibold text-gray-300 tracking-wider uppercase"
+            >
+              Product
+            </h3>
+            <ul class="mt-4 space-y-4">
+              <li>
+                <a
+                  href="#features"
+                  class="text-base text-gray-400 hover:text-white"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#how-it-works"
+                  class="text-base text-gray-400 hover:text-white"
+                  >How It Works</a
+                >
+              </li>
+              <li>
+                <a
+                  href="support.html"
+                  class="text-base text-gray-400 hover:text-white"
+                  >Support</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- <div>
+            <h3
+              class="text-sm font-semibold text-gray-300 tracking-wider uppercase"
+            >
+              Legal
+            </h3>
+            <ul class="mt-4 space-y-4">
+              <li>
+                <a href="#" class="text-base text-gray-400 hover:text-white"
+                  >Privacy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-base text-gray-400 hover:text-white"
+                  >Terms</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-base text-gray-400 hover:text-white"
+                  >Cookie Policy</a
+                >
+              </li>
+            </ul>
+          </div> -->
+          <div>
+            <h3
+              class="text-sm font-semibold text-gray-300 tracking-wider uppercase"
+            >
+              Connect
+            </h3>
+            <ul class="mt-4 space-y-4">
+              <li>
+                <a href="#" class="text-base text-gray-400 hover:text-white"
+                  >Twitter</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-base text-gray-400 hover:text-white"
+                  >GitHub</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="mt-12 border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-base text-gray-400">
+            &copy; <span id="currentYear"></span> Sorti. All rights reserved.
+          </p>
+          <div class="mt-4 md:mt-0 flex space-x-6">
+            <a href="#" class="text-gray-400 hover:text-white">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery for Support Page Interactions -->
+    <script>
+      $(document).ready(function () {
+        // Set current year in footer
+        document.getElementById("currentYear").textContent =
+          new Date().getFullYear();
+        // Smooth scrolling for anchor links
+        $('a[href^="#"]').on("click", function (event) {
+          const target = $(this.getAttribute("href"));
+          if (target.length) {
+            event.preventDefault();
+            $("html, body")
+              .stop()
+              .animate(
+                {
+                  scrollTop: target.offset().top - 80,
+                },
+                1000
+              );
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
