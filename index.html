@@ -1,202 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sorti | Free URL Shortener - Create Short Links Instantly</title>
-    <meta
-      name="description"
-      content="Free URL shortener tool to create short, memorable links. Track clicks, secure links, and boost your online presence with our ad-free service."
-    />
-    <meta
-      name="keywords"
-      content="URL shortener, free link shortener, shorten URL, custom short links, secure URL, ad-free shortener, link management"
-    />
-    <!-- Google / Search Engine Tags -->
-    <meta
-      itemprop="name"
-      content="Sorti | Free URL Shortener - Create Short Links Instantly"
-    />
-    <meta
-      itemprop="description"
-      content="Free URL shortener tool to create short, memorable links. Track clicks, secure links, and boost your online presence with our ad-free service."
-    />
-    <meta
-      itemprop="image"
-      content="https://res.cloudinary.com/dzjujoqyi/image/upload/v1744299992/sorti-meta-image.png"
-    />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sorti | Free URL Shortener - Create Short Links Instantly</title>
+        <meta
+            name="description"
+            content="Free URL shortener tool to create short, memorable links. Track clicks, secure links, and boost your online presence with our ad-free service."
+        />
+        <meta
+            name="keywords"
+            content="URL shortener, free link shortener, shorten URL, custom short links, secure URL, ad-free shortener, link management"
+        />
+        <!-- Google / Search Engine Tags -->
+        <meta
+            itemprop="name"
+            content="Sorti | Free URL Shortener - Create Short Links Instantly"
+        />
+        <meta
+            itemprop="description"
+            content="Free URL shortener tool to create short, memorable links. Track clicks, secure links, and boost your online presence with our ad-free service."
+        />
+        <meta
+            itemprop="image"
+            content="https://res.cloudinary.com/dzjujoqyi/image/upload/v1744299992/sorti-meta-image.png"
+        />
 
-    <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://www.sorti.in/" />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="Sorti | Free URL Shortener - Create Short Links Instantly"
-    />
-    <meta
-      property="og:description"
-      content="Free URL shortener tool to create short, memorable links. Track clicks, secure links, and boost your online presence with our ad-free service."
-    />
-    <meta
-      property="og:image"
-      content="https://res.cloudinary.com/dzjujoqyi/image/upload/v1744299992/sorti-meta-image.png"
-    />
+        <!-- Facebook Meta Tags -->
+        <meta property="og:url" content="https://www.sorti.in/" />
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:title"
+            content="Sorti | Free URL Shortener - Create Short Links Instantly"
+        />
+        <meta
+            property="og:description"
+            content="Free URL shortener tool to create short, memorable links. Track clicks, secure links, and boost your online presence with our ad-free service."
+        />
+        <meta
+            property="og:image"
+            content="https://res.cloudinary.com/dzjujoqyi/image/upload/v1744299992/sorti-meta-image.png"
+        />
 
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Sorti | Free URL Shortener - Create Short Links Instantly"
-    />
-    <meta
-      name="twitter:description"
-      content="Free URL shortener tool to create short, memorable links. Track clicks, secure links, and boost your online presence with our ad-free service."
-    />
-    <meta
-      name="twitter:image"
-      content="https://res.cloudinary.com/dzjujoqyi/image/upload/v1744299992/sorti-meta-image.png"
-    />
-    <link rel="canonical" href="https://www.sorti.in/" />
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "#4F46E5",
-              secondary: "#10B981",
-              dark: "#1F2937",
-              light: "#F9FAFB",
-            },
-          },
-        },
-      };
-    </script>
-    <!-- sitebehaviour analytics -->
-    <script type="text/javascript">
-      (function () {
-        var sbSiteSecret = "223d690e-337f-46f1-bc92-0c1778e6ece4";
-        window.sitebehaviourTrackingSecret = sbSiteSecret;
-        var scriptElement = document.createElement("script");
-        scriptElement.async = true;
-        scriptElement.id = "site-behaviour-script-v2";
-        scriptElement.src =
-          "https://sitebehaviour-cdn.fra1.cdn.digitaloceanspaces.com/index.min.js?sitebehaviour-secret=" +
-          sbSiteSecret;
-        document.head.appendChild(scriptElement);
-      })();
-    </script>
-    <style>
-      .gradient-bg {
-        background: linear-gradient(135deg, #4f46e5 0%, #10b981 100%);
-      }
-      .btn-primary {
-        background-color: #4f46e5;
-        transition: all 0.3s ease;
-      }
-      .btn-primary:hover {
-        background-color: #4338ca;
-        transform: translateY(-2px);
-      }
-      .btn-secondary {
-        background-color: #10b981;
-        transition: all 0.3s ease;
-      }
-      .btn-secondary:hover {
-        background-color: #0d9f6e;
-        transform: translateY(-2px);
-      }
-      .feature-card {
-        transition: all 0.3s ease;
-      }
-      .feature-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-      }
-    </style>
-  </head>
-  <body class="font-sans antialiased text-gray-800 bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-          <div class="flex items-center">
-            <div class="flex-shrink-0 flex items-center">
-              <i class="text-primary size-10 text-2xl mr-2"
-                ><img src="favicon.svg" alt="Sorti Logo"
-              /></i>
-              <span class="text-xl font-bold text-dark">Sorti</span>
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="Sorti | Free URL Shortener - Create Short Links Instantly"
+        />
+        <meta
+            name="twitter:description"
+            content="Free URL shortener tool to create short, memorable links. Track clicks, secure links, and boost your online presence with our ad-free service."
+        />
+        <meta
+            name="twitter:image"
+            content="https://res.cloudinary.com/dzjujoqyi/image/upload/v1744299992/sorti-meta-image.png"
+        />
+        <link rel="canonical" href="https://www.sorti.in/" />
+        <link
+            rel="icon"
+            type="image/png"
+            href="/favicon-96x96.png"
+            sizes="96x96"
+        />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        />
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: "#4F46E5",
+                            secondary: "#10B981",
+                            dark: "#1F2937",
+                            light: "#F9FAFB",
+                        },
+                    },
+                },
+            };
+        </script>
+        <!-- sitebehaviour analytics -->
+        <script type="text/javascript">
+            (function () {
+                var sbSiteSecret = "223d690e-337f-46f1-bc92-0c1778e6ece4";
+                window.sitebehaviourTrackingSecret = sbSiteSecret;
+                var scriptElement = document.createElement("script");
+                scriptElement.async = true;
+                scriptElement.id = "site-behaviour-script-v2";
+                scriptElement.src =
+                    "https://sitebehaviour-cdn.fra1.cdn.digitaloceanspaces.com/index.min.js?sitebehaviour-secret=" +
+                    sbSiteSecret;
+                document.head.appendChild(scriptElement);
+            })();
+        </script>
+        <style>
+            .gradient-bg {
+                background: linear-gradient(135deg, #4f46e5 0%, #10b981 100%);
+            }
+            .btn-primary {
+                background-color: #4f46e5;
+                transition: all 0.3s ease;
+            }
+            .btn-primary:hover {
+                background-color: #4338ca;
+                transform: translateY(-2px);
+            }
+            .btn-secondary {
+                background-color: #10b981;
+                transition: all 0.3s ease;
+            }
+            .btn-secondary:hover {
+                background-color: #0d9f6e;
+                transform: translateY(-2px);
+            }
+            .feature-card {
+                transition: all 0.3s ease;
+            }
+            .feature-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+    </head>
+    <body class="font-sans antialiased text-gray-800 bg-gray-50">
+        <!-- Navigation -->
+        <nav class="bg-white shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 flex items-center">
+                            <i class="text-primary size-10 text-2xl mr-2"
+                                ><img src="favicon.svg" alt="Sorti Logo"
+                            /></i>
+                            <span class="text-xl font-bold text-dark"
+                                >Sorti</span
+                            >
+                        </div>
+                    </div>
+                    <div
+                        class="hidden sm:ml-6 sm:flex sm:items-center space-x-8"
+                    >
+                        <a
+                            href="index.html"
+                            class="text-primary hover:text-dark px-3 py-2 text-sm font-medium"
+                            >Home</a
+                        >
+                        <a
+                            href="analytics.html"
+                            class="font-bold px-3 py-2 border-2 rounded-lg border-primary hover:bg-primary hover:text-white"
+                            >Analyse a Sorti URL</a
+                        >
+                        <a
+                            href="https://url.dsourav.com/"
+                            referrerpolicy="no-referrer"
+                            class="text-gray-500 hover:text-dark px-3 py-2 text-sm font-medium border-b-2 border-primary"
+                            >Expand a Short URL</a
+                        >
+                        <a
+                            href="#features"
+                            class="text-gray-500 hover:text-dark px-3 py-2 text-sm font-medium"
+                            >Features</a
+                        >
+                        <a
+                            href="#how-it-works"
+                            class="text-gray-500 hover:text-dark px-3 py-2 text-sm font-medium"
+                            >How It Works</a
+                        >
+                        <a
+                            href="#about"
+                            class="text-gray-500 hover:text-dark px-3 py-2 text-sm font-medium"
+                            >About Us</a
+                        >
+                        <a
+                            href="support.html"
+                            class="text-gray-500 hover:text-dark px-3 py-2 text-sm font-medium"
+                            >Support</a
+                        >
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="hidden sm:ml-6 sm:flex sm:items-center space-x-8">
-            <a
-              href="index.html"
-              class="text-primary hover:text-dark px-3 py-2 text-sm font-medium"
-              >Home</a
-            >
-            <a
-              href="analytics.html"
-              class="font-bold px-3 py-2 border-2 rounded-lg border-primary hover:bg-primary hover:text-white"
-              >Analyse a Sorti URL</a
-            >
-            <a
-              href="https://url.dsourav.com/"
-              referrerpolicy="no-referrer"
-              class="text-gray-500 hover:text-dark px-3 py-2 text-sm font-medium border-b-2 border-primary"
-              >Expand a Short URL</a
-            >
-            <a
-              href="#features"
-              class="text-gray-500 hover:text-dark px-3 py-2 text-sm font-medium"
-              >Features</a
-            >
-            <a
-              href="#how-it-works"
-              class="text-gray-500 hover:text-dark px-3 py-2 text-sm font-medium"
-              >How It Works</a
-            >
-            <a
-              href="#about"
-              class="text-gray-500 hover:text-dark px-3 py-2 text-sm font-medium"
-              >About Us</a
-            >
-            <a
-              href="support.html"
-              class="text-gray-500 hover:text-dark px-3 py-2 text-sm font-medium"
-              >Support</a
-            >
-          </div>
-        </div>
-      </div>
-    </nav>
+        </nav>
 
-    <!-- Hero Section with URL Shortener -->
-    <div class="gradient-bg text-white py-16">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <h1
-            class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl mb-6"
-          >
-            Shorten Your Links, Amplify Your Reach
-          </h1>
-          <p class="max-w-2xl mx-auto text-xl text-blue-100">
-            Create short, memorable URLs in seconds. Free, secure, and
-            completely ad-free.
-          </p>
-        </div>
+        <!-- Hero Section with URL Shortener -->
+        <div class="gradient-bg text-white py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h1
+                        class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl mb-6"
+                    >
+                        Shorten Your Links, Amplify Your Reach
+                    </h1>
+                    <p class="max-w-2xl mx-auto text-xl text-blue-100">
+                        Create short, memorable URLs in seconds. Free, secure,
+                        and completely ad-free.
+                    </p>
+                </div>
 
-        <!-- URL Shortener Form -->
-        <!-- <div
+                <!-- URL Shortener Form -->
+                <!-- <div
           class="mt-12 max-w-3xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden"
         >
           <div class="p-6">
@@ -238,481 +251,539 @@
             </div>
           </div>
         </div> -->
-        <div
-          class="mt-12 max-w-3xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden"
-        >
-          <div class="p-6">
-            <!-- Input Form (Initially Visible) -->
-            <div id="inputForm">
-              <div class="flex flex-col md:flex-row gap-4">
-                <input
-                  type="url"
-                  id="longUrl"
-                  placeholder="Paste your long URL here"
-                  class="flex-grow px-4 py-3 border border-gray-300 rounded-lg text-black focus:ring-2 focus:ring-primary focus:border-transparent"
-                />
-                <button
-                  id="shortenBtn"
-                  class="btn-primary px-6 py-3 rounded-lg font-medium text-white"
+                <div
+                    class="mt-12 max-w-3xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden"
                 >
-                  Shorten URL
-                </button>
-              </div>
-              <span id="error"></span>
-            </div>
-
-            <!-- Result Container (Initially Hidden) -->
-            <div id="resultContainer" class="hidden">
-              <div class="flex flex-col md:flex-row gap-4 items-center">
-                <input
-                  type="text"
-                  id="shortUrl"
-                  readonly
-                  class="flex-grow px-4 py-3 border border-gray-300 rounded-lg text-black"
-                />
-                <button
-                  id="copyBtn"
-                  class="btn-secondary px-6 py-3 rounded-lg font-medium text-white"
-                >
-                  Copy
-                </button>
-              </div>
-              <div class="mt-4 flex justify-between items-center">
-                <div>
-                  <button
-                    id="newLinkBtn"
-                    class="text-primary font-medium hover:text-primary-dark"
-                  >
-                    <i class="fas fa-plus mr-1"></i> Create New
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Features Section -->
-    <div id="features" class="py-16 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <h2 class="text-3xl font-extrabold text-dark sm:text-4xl">
-            Powerful Features for Your Links
-          </h2>
-          <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-            Everything you need to manage and track your links effectively.
-          </p>
-        </div>
-
-        <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <div class="feature-card p-8 bg-light rounded-lg shadow-md">
-            <div
-              class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white"
-            >
-              <i class="fas fa-shield-alt"></i>
-            </div>
-            <h3 class="mt-6 text-lg font-medium text-dark">Secure Links</h3>
-            <p class="mt-2 text-gray-500">
-              All shortened URLs are encrypted and protected against spam and
-              malware.
-            </p>
-          </div>
-
-          <div class="feature-card p-8 bg-light rounded-lg shadow-md">
-            <div
-              class="flex items-center justify-center h-12 w-12 rounded-md bg-secondary text-white"
-            >
-              <i class="fas fa-chart-line"></i>
-            </div>
-            <h3 class="mt-6 text-lg font-medium text-dark">Click Analytics</h3>
-            <p class="mt-2 text-gray-500">
-              Track how many clicks your shortened links receive in real-time.
-            </p>
-          </div>
-
-          <div class="feature-card p-8 bg-light rounded-lg shadow-md">
-            <div
-              class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white"
-            >
-              <i class="fas fa-ad"></i>
-            </div>
-            <h3 class="mt-6 text-lg font-medium text-dark">No Ads</h3>
-            <p class="mt-2 text-gray-500">
-              Enjoy a completely ad-free experience with no annoying popups or
-              banners.
-            </p>
-          </div>
-
-          <div class="feature-card p-8 bg-light rounded-lg shadow-md">
-            <div
-              class="flex items-center justify-center h-12 w-12 rounded-md bg-secondary text-white"
-            >
-              <i class="fas fa-infinity"></i>
-            </div>
-            <h3 class="mt-6 text-lg font-medium text-dark">Unlimited Links</h3>
-            <p class="mt-2 text-gray-500">
-              Create as many short URLs as you need with no restrictions.
-            </p>
-          </div>
-
-          <div class="feature-card p-8 bg-light rounded-lg shadow-md">
-            <div
-              class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white"
-            >
-              <i class="fas fa-bolt"></i>
-            </div>
-            <h3 class="mt-6 text-lg font-medium text-dark">Lightning Fast</h3>
-            <p class="mt-2 text-gray-500">
-              Our servers deliver your shortened links instantly with 99.9%
-              uptime.
-            </p>
-          </div>
-
-          <div class="feature-card p-8 bg-light rounded-lg shadow-md">
-            <div
-              class="flex items-center justify-center h-12 w-12 rounded-md bg-secondary text-white"
-            >
-              <i class="fas fa-mobile-alt"></i>
-            </div>
-            <h3 class="mt-6 text-lg font-medium text-dark">Mobile Friendly</h3>
-            <p class="mt-2 text-gray-500">
-              Works perfectly on all devices from smartphones to desktop
-              computers.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- How It Works Section -->
-    <div id="how-it-works" class="py-16 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="lg:text-center">
-          <h2 class="text-3xl font-extrabold text-dark sm:text-4xl">
-            How It Works
-          </h2>
-          <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-            Shortening your URLs has never been easier. Just follow these simple
-            steps.
-          </p>
-        </div>
-
-        <div class="mt-12">
-          <div
-            class="space-y-10 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:gap-y-10"
-          >
-            <div class="relative">
-              <div
-                class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white"
-              >
-                <span class="text-xl font-bold">1</span>
-              </div>
-              <div class="ml-16">
-                <h3 class="text-lg font-medium text-dark">Paste Your URL</h3>
-                <p class="mt-2 text-gray-500">
-                  Copy any long URL from your browser's address bar and paste it
-                  into the input field above.
-                </p>
-              </div>
-            </div>
-
-            <div class="relative">
-              <div
-                class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white"
-              >
-                <span class="text-xl font-bold">2</span>
-              </div>
-              <div class="ml-16">
-                <h3 class="text-lg font-medium text-dark">Click Shorten</h3>
-                <p class="mt-2 text-gray-500">
-                  Hit the "Shorten URL" button and we'll instantly generate a
-                  compact version of your link.
-                </p>
-              </div>
-            </div>
-
-            <div class="relative">
-              <div
-                class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white"
-              >
-                <span class="text-xl font-bold">3</span>
-              </div>
-              <div class="ml-16">
-                <h3 class="text-lg font-medium text-dark">Share Your Link</h3>
-                <p class="mt-2 text-gray-500">
-                  Copy your new short URL and share it anywhere - emails, social
-                  media, texts, and more.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Security Section -->
-    <div class="py-16 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
-          <div class="mb-8 lg:mb-0">
-            <h2 class="text-3xl font-extrabold text-dark sm:text-4xl">
-              Secure & Reliable Link Shortening
-            </h2>
-            <p class="mt-4 text-lg text-gray-500">
-              Your privacy and security are our top priorities. All shortened
-              links are encrypted and scanned for malicious content.
-            </p>
-            <div class="mt-8">
-              <div class="flex items-start">
-                <div class="flex-shrink-0">
-                  <div
-                    class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white"
-                  >
-                    <i class="fas fa-lock"></i>
-                  </div>
-                </div>
-                <div class="ml-4">
-                  <h3 class="text-lg font-medium text-dark">
-                    HTTPS Encryption
-                  </h3>
-                  <p class="mt-2 text-gray-500">
-                    All links are served over secure HTTPS connections to
-                    protect your data.
-                  </p>
-                </div>
-              </div>
-              <div class="mt-6 flex items-start">
-                <div class="flex-shrink-0">
-                  <div
-                    class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white"
-                  >
-                    <i class="fas fa-eye-slash"></i>
-                  </div>
-                </div>
-                <div class="ml-4">
-                  <h3 class="text-lg font-medium text-dark">No Tracking</h3>
-                  <p class="mt-2 text-gray-500">
-                    We don't track your personal information or browsing habits.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="relative">
-            <img
-              class="w-full rounded-lg shadow-xl"
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-              alt="Security illustration"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- About Us Section -->
-    <div id="about" class="py-16 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <h2 class="text-3xl font-extrabold text-dark sm:text-4xl">
-            About Sorti
-          </h2>
-          <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-            Our mission is to make sharing links simple, secure, and accessible
-            to everyone.
-          </p>
-        </div>
-
-        <div class="mt-12">
-          <div class="bg-white shadow overflow-hidden rounded-lg">
-            <div class="px-4 py-5 sm:p-6">
-              <div class="flex flex-col md:flex-row">
-                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
-                  <h3 class="text-lg font-medium text-dark">Our Story</h3>
-                  <p class="mt-4 text-gray-500">
-                    Sorti was founded in 2025 with a simple goal: to provide a
-                    free, ad-free URL shortening service that puts users first.
-                    Frustrated with existing services that were cluttered with
-                    ads and tracking, our team set out to build a better
-                    solution.
-                  </p>
-                  <p class="mt-4 text-gray-500">
-                    Today, Sorti serves millions of users worldwide, helping
-                    individuals and businesses share links more effectively
-                    without compromising on privacy or user experience.
-                  </p>
-                </div>
-                <div class="md:w-1/2">
-                  <h3 class="text-lg font-medium text-dark">
-                    Why Choose Sorti?
-                  </h3>
-                  <ul class="mt-4 space-y-4">
-                    <li class="flex items-start">
-                      <div class="flex-shrink-0">
-                        <div
-                          class="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-white"
-                        >
-                          <i class="fas fa-check text-xs"></i>
+                    <div class="p-6">
+                        <!-- Input Form (Initially Visible) -->
+                        <div id="inputForm">
+                            <div class="flex flex-col md:flex-row gap-4">
+                                <input
+                                    type="url"
+                                    id="longUrl"
+                                    placeholder="Paste your long URL here"
+                                    class="flex-grow px-4 py-3 border border-gray-300 rounded-lg text-black focus:ring-2 focus:ring-primary focus:border-transparent"
+                                />
+                                <button
+                                    id="shortenBtn"
+                                    class="btn-primary px-6 py-3 rounded-lg font-medium text-white"
+                                >
+                                    Shorten URL
+                                </button>
+                            </div>
+                            <span id="error"></span>
                         </div>
-                      </div>
-                      <p class="ml-3 text-gray-500">
-                        <strong>No Ads:</strong> We believe in an ad-free
-                        internet experience.
-                      </p>
-                    </li>
-                    <li class="flex items-start">
-                      <div class="flex-shrink-0">
-                        <div
-                          class="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-white"
-                        >
-                          <i class="fas fa-check text-xs"></i>
+
+                        <!-- Result Container (Initially Hidden) -->
+                        <div id="resultContainer" class="hidden">
+                            <div
+                                class="flex flex-col md:flex-row gap-4 items-center"
+                            >
+                                <input
+                                    type="text"
+                                    id="shortUrl"
+                                    readonly
+                                    class="flex-grow px-4 py-3 border border-gray-300 rounded-lg text-black"
+                                />
+                                <button
+                                    id="copyBtn"
+                                    class="btn-secondary px-6 py-3 rounded-lg font-medium text-white"
+                                >
+                                    Copy
+                                </button>
+                            </div>
+                            <div class="mt-4 flex justify-between items-center">
+                                <div>
+                                    <button
+                                        id="newLinkBtn"
+                                        class="text-primary font-medium hover:text-primary-dark"
+                                    >
+                                        <i class="fas fa-plus mr-1"></i> Create
+                                        New
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                      <p class="ml-3 text-gray-500">
-                        <strong>Privacy Focused:</strong> We don't sell your
-                        data or track your activity.
-                      </p>
-                    </li>
-                    <li class="flex items-start">
-                      <div class="flex-shrink-0">
-                        <div
-                          class="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-white"
-                        >
-                          <i class="fas fa-check text-xs"></i>
-                        </div>
-                      </div>
-                      <p class="ml-3 text-gray-500">
-                        <strong>Open Source:</strong> Our code is transparent
-                        and available for review.
-                      </p>
-                    </li>
-                    <li class="flex items-start">
-                      <div class="flex-shrink-0">
-                        <div
-                          class="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-white"
-                        >
-                          <i class="fas fa-check text-xs"></i>
-                        </div>
-                      </div>
-                      <p class="ml-3 text-gray-500">
-                        <strong>Community Supported:</strong> Powered by users
-                        like you.
-                      </p>
-                    </li>
-                  </ul>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- FAQ Section -->
-    <div class="py-16 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <h2 class="text-3xl font-extrabold text-dark sm:text-4xl">
-            Frequently Asked Questions
-          </h2>
-          <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-            Find answers to common questions about Sorti.
-          </p>
         </div>
 
-        <div class="mt-12">
-          <div class="space-y-6 max-w-3xl mx-auto">
-            <div class="bg-white shadow overflow-hidden rounded-lg">
-              <div class="px-4 py-5 sm:p-6">
-                <h3 class="text-lg font-medium text-dark">
-                  Is Sorti really free?
-                </h3>
-                <p class="mt-2 text-gray-500">
-                  Yes, Sorti is completely free to use with no hidden costs.
-                  Users can contribute to keeping the service running.
-                </p>
-              </div>
-            </div>
+        <!-- Features Section -->
+        <div id="features" class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-extrabold text-dark sm:text-4xl">
+                        Powerful Features for Your Links
+                    </h2>
+                    <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                        Everything you need to manage and track your links
+                        effectively.
+                    </p>
+                </div>
 
-            <div class="bg-white shadow overflow-hidden rounded-lg">
-              <div class="px-4 py-5 sm:p-6">
-                <h3 class="text-lg font-medium text-dark">
-                  How long do shortened URLs last?
-                </h3>
-                <p class="mt-2 text-gray-500">
-                  Your shortened URLs will never expire as long as Sorti exists.
-                  We're committed to maintaining all links indefinitely.
-                </p>
-              </div>
-            </div>
+                <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <div class="feature-card p-8 bg-light rounded-lg shadow-md">
+                        <div
+                            class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white"
+                        >
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="mt-6 text-lg font-medium text-dark">
+                            Secure Links
+                        </h3>
+                        <p class="mt-2 text-gray-500">
+                            All shortened URLs are encrypted and protected
+                            against spam and malware.
+                        </p>
+                    </div>
 
-            <div class="bg-white shadow overflow-hidden rounded-lg">
-              <div class="px-4 py-5 sm:p-6">
-                <h3 class="text-lg font-medium text-dark">
-                  How does Sorti make money?
-                </h3>
-                <p class="mt-2 text-gray-500">
-                  We don't. Sorti is supported entirely by voluntary
-                  contributions from our community. We believe in keeping the
-                  internet free and open without resorting to ads or selling
-                  user data.
-                </p>
-              </div>
+                    <div class="feature-card p-8 bg-light rounded-lg shadow-md">
+                        <div
+                            class="flex items-center justify-center h-12 w-12 rounded-md bg-secondary text-white"
+                        >
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="mt-6 text-lg font-medium text-dark">
+                            Click Analytics
+                        </h3>
+                        <p class="mt-2 text-gray-500">
+                            Track how many clicks your shortened links receive
+                            in real-time.
+                        </p>
+                    </div>
+
+                    <div class="feature-card p-8 bg-light rounded-lg shadow-md">
+                        <div
+                            class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white"
+                        >
+                            <i class="fas fa-ad"></i>
+                        </div>
+                        <h3 class="mt-6 text-lg font-medium text-dark">
+                            No Ads
+                        </h3>
+                        <p class="mt-2 text-gray-500">
+                            Enjoy a completely ad-free experience with no
+                            annoying popups or banners.
+                        </p>
+                    </div>
+
+                    <div class="feature-card p-8 bg-light rounded-lg shadow-md">
+                        <div
+                            class="flex items-center justify-center h-12 w-12 rounded-md bg-secondary text-white"
+                        >
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                        <h3 class="mt-6 text-lg font-medium text-dark">
+                            Unlimited Links
+                        </h3>
+                        <p class="mt-2 text-gray-500">
+                            Create as many short URLs as you need with no
+                            restrictions.
+                        </p>
+                    </div>
+
+                    <div class="feature-card p-8 bg-light rounded-lg shadow-md">
+                        <div
+                            class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white"
+                        >
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="mt-6 text-lg font-medium text-dark">
+                            Lightning Fast
+                        </h3>
+                        <p class="mt-2 text-gray-500">
+                            Our servers deliver your shortened links instantly
+                            with 99.9% uptime.
+                        </p>
+                    </div>
+
+                    <div class="feature-card p-8 bg-light rounded-lg shadow-md">
+                        <div
+                            class="flex items-center justify-center h-12 w-12 rounded-md bg-secondary text-white"
+                        >
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="mt-6 text-lg font-medium text-dark">
+                            Mobile Friendly
+                        </h3>
+                        <p class="mt-2 text-gray-500">
+                            Works perfectly on all devices from smartphones to
+                            desktop computers.
+                        </p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white">
-      <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div>
-            <h3
-              class="text-sm font-semibold text-gray-300 tracking-wider uppercase"
-            >
-              Product
-            </h3>
-            <ul class="mt-4 space-y-4">
-              <li>
-                <a
-                  href="#features"
-                  class="text-base text-gray-400 hover:text-white"
-                  >Features</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#how-it-works"
-                  class="text-base text-gray-400 hover:text-white"
-                  >How It Works</a
-                >
-              </li>
-              <li>
-                <a
-                  href="support.html"
-                  class="text-base text-gray-400 hover:text-white"
-                  >Support</a
-                >
-              </li>
-              <li>
-                <a
-                  href="analytics.html"
-                  class="text-base text-gray-400 hover:text-white"
-                  >Analyse a Sorti URL</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://url.dsourav.com/"
-                  class="text-base text-gray-400 hover:text-white"
-                  >Expand a Short URL</a
-                >
-              </li>
-            </ul>
-          </div>
-          <!-- <div>
+        <!-- How It Works Section -->
+        <div id="how-it-works" class="py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:text-center">
+                    <h2 class="text-3xl font-extrabold text-dark sm:text-4xl">
+                        How It Works
+                    </h2>
+                    <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                        Shortening your URLs has never been easier. Just follow
+                        these simple steps.
+                    </p>
+                </div>
+
+                <div class="mt-12">
+                    <div
+                        class="space-y-10 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:gap-y-10"
+                    >
+                        <div class="relative">
+                            <div
+                                class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white"
+                            >
+                                <span class="text-xl font-bold">1</span>
+                            </div>
+                            <div class="ml-16">
+                                <h3 class="text-lg font-medium text-dark">
+                                    Paste Your URL
+                                </h3>
+                                <p class="mt-2 text-gray-500">
+                                    Copy any long URL from your browser's
+                                    address bar and paste it into the input
+                                    field above.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <div
+                                class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white"
+                            >
+                                <span class="text-xl font-bold">2</span>
+                            </div>
+                            <div class="ml-16">
+                                <h3 class="text-lg font-medium text-dark">
+                                    Click Shorten
+                                </h3>
+                                <p class="mt-2 text-gray-500">
+                                    Hit the "Shorten URL" button and we'll
+                                    instantly generate a compact version of your
+                                    link.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <div
+                                class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white"
+                            >
+                                <span class="text-xl font-bold">3</span>
+                            </div>
+                            <div class="ml-16">
+                                <h3 class="text-lg font-medium text-dark">
+                                    Share Your Link
+                                </h3>
+                                <p class="mt-2 text-gray-500">
+                                    Copy your new short URL and share it
+                                    anywhere - emails, social media, texts, and
+                                    more.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Security Section -->
+        <div class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+                    <div class="mb-8 lg:mb-0">
+                        <h2
+                            class="text-3xl font-extrabold text-dark sm:text-4xl"
+                        >
+                            Secure & Reliable Link Shortening
+                        </h2>
+                        <p class="mt-4 text-lg text-gray-500">
+                            Your privacy and security are our top priorities.
+                            All shortened links are encrypted and scanned for
+                            malicious content.
+                        </p>
+                        <div class="mt-8">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <div
+                                        class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white"
+                                    >
+                                        <i class="fas fa-lock"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-dark">
+                                        HTTPS Encryption
+                                    </h3>
+                                    <p class="mt-2 text-gray-500">
+                                        All links are served over secure HTTPS
+                                        connections to protect your data.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="mt-6 flex items-start">
+                                <div class="flex-shrink-0">
+                                    <div
+                                        class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white"
+                                    >
+                                        <i class="fas fa-eye-slash"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-dark">
+                                        No Tracking
+                                    </h3>
+                                    <p class="mt-2 text-gray-500">
+                                        We don't track your personal information
+                                        or browsing habits.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <img
+                            class="w-full rounded-lg shadow-xl"
+                            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                            alt="Security illustration"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Us Section -->
+        <div id="about" class="py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-extrabold text-dark sm:text-4xl">
+                        About Sorti
+                    </h2>
+                    <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                        Our mission is to make sharing links simple, secure, and
+                        accessible to everyone.
+                    </p>
+                </div>
+
+                <div class="mt-12">
+                    <div class="bg-white shadow overflow-hidden rounded-lg">
+                        <div class="px-4 py-5 sm:p-6">
+                            <div class="flex flex-col md:flex-row">
+                                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                                    <h3 class="text-lg font-medium text-dark">
+                                        Our Story
+                                    </h3>
+                                    <p class="mt-4 text-gray-500">
+                                        Sorti was founded in 2025 with a simple
+                                        goal: to provide a free, ad-free URL
+                                        shortening service that puts users
+                                        first. Frustrated with existing services
+                                        that were cluttered with ads and
+                                        tracking, our team set out to build a
+                                        better solution.
+                                    </p>
+                                    <p class="mt-4 text-gray-500">
+                                        Today, Sorti serves millions of users
+                                        worldwide, helping individuals and
+                                        businesses share links more effectively
+                                        without compromising on privacy or user
+                                        experience.
+                                    </p>
+                                </div>
+                                <div class="md:w-1/2">
+                                    <h3 class="text-lg font-medium text-dark">
+                                        Why Choose Sorti?
+                                    </h3>
+                                    <ul class="mt-4 space-y-4">
+                                        <li class="flex items-start">
+                                            <div class="flex-shrink-0">
+                                                <div
+                                                    class="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-white"
+                                                >
+                                                    <i
+                                                        class="fas fa-check text-xs"
+                                                    ></i>
+                                                </div>
+                                            </div>
+                                            <p class="ml-3 text-gray-500">
+                                                <strong>No Ads:</strong> We
+                                                believe in an ad-free internet
+                                                experience.
+                                            </p>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <div class="flex-shrink-0">
+                                                <div
+                                                    class="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-white"
+                                                >
+                                                    <i
+                                                        class="fas fa-check text-xs"
+                                                    ></i>
+                                                </div>
+                                            </div>
+                                            <p class="ml-3 text-gray-500">
+                                                <strong
+                                                    >Privacy Focused:</strong
+                                                >
+                                                We don't sell your data or track
+                                                your activity.
+                                            </p>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <div class="flex-shrink-0">
+                                                <div
+                                                    class="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-white"
+                                                >
+                                                    <i
+                                                        class="fas fa-check text-xs"
+                                                    ></i>
+                                                </div>
+                                            </div>
+                                            <p class="ml-3 text-gray-500">
+                                                <strong>Open Source:</strong>
+                                                Our code is transparent and
+                                                available for review.
+                                            </p>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <div class="flex-shrink-0">
+                                                <div
+                                                    class="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-white"
+                                                >
+                                                    <i
+                                                        class="fas fa-check text-xs"
+                                                    ></i>
+                                                </div>
+                                            </div>
+                                            <p class="ml-3 text-gray-500">
+                                                <strong
+                                                    >Community
+                                                    Supported:</strong
+                                                >
+                                                Powered by users like you.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-extrabold text-dark sm:text-4xl">
+                        Frequently Asked Questions
+                    </h2>
+                    <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                        Find answers to common questions about Sorti.
+                    </p>
+                </div>
+
+                <div class="mt-12">
+                    <div class="space-y-6 max-w-3xl mx-auto">
+                        <div class="bg-white shadow overflow-hidden rounded-lg">
+                            <div class="px-4 py-5 sm:p-6">
+                                <h3 class="text-lg font-medium text-dark">
+                                    Is Sorti really free?
+                                </h3>
+                                <p class="mt-2 text-gray-500">
+                                    Yes, Sorti is completely free to use with no
+                                    hidden costs. Users can contribute to
+                                    keeping the service running.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white shadow overflow-hidden rounded-lg">
+                            <div class="px-4 py-5 sm:p-6">
+                                <h3 class="text-lg font-medium text-dark">
+                                    How long do shortened URLs last?
+                                </h3>
+                                <p class="mt-2 text-gray-500">
+                                    Your shortened URLs will never expire as
+                                    long as Sorti exists. We're committed to
+                                    maintaining all links indefinitely.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white shadow overflow-hidden rounded-lg">
+                            <div class="px-4 py-5 sm:p-6">
+                                <h3 class="text-lg font-medium text-dark">
+                                    How does Sorti make money?
+                                </h3>
+                                <p class="mt-2 text-gray-500">
+                                    We don't. Sorti is supported entirely by
+                                    voluntary contributions from our community.
+                                    We believe in keeping the internet free and
+                                    open without resorting to ads or selling
+                                    user data.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-white">
+            <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div>
+                        <h3
+                            class="text-sm font-semibold text-gray-300 tracking-wider uppercase"
+                        >
+                            Product
+                        </h3>
+                        <ul class="mt-4 space-y-4">
+                            <li>
+                                <a
+                                    href="#features"
+                                    class="text-base text-gray-400 hover:text-white"
+                                    >Features</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#how-it-works"
+                                    class="text-base text-gray-400 hover:text-white"
+                                    >How It Works</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="support.html"
+                                    class="text-base text-gray-400 hover:text-white"
+                                    >Support</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="analytics.html"
+                                    class="text-base text-gray-400 hover:text-white"
+                                    >Analyse a Sorti URL</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://url.dsourav.com/"
+                                    class="text-base text-gray-400 hover:text-white"
+                                    >Expand a Short URL</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- <div>
             <h3
               class="text-sm font-semibold text-gray-300 tracking-wider uppercase"
             >
@@ -736,162 +807,198 @@
               </li>
             </ul>
           </div> -->
-          <div>
-            <h3
-              class="text-sm font-semibold text-gray-300 tracking-wider uppercase"
-            >
-              Connect
-            </h3>
-            <ul class="mt-4 space-y-4">
-              <li>
-                <a href="https://x.com/souravdotdev" class="text-base text-gray-400 hover:text-white"
-                  >Twitter</a
+                    <div>
+                        <h3
+                            class="text-sm font-semibold text-gray-300 tracking-wider uppercase"
+                        >
+                            Connect
+                        </h3>
+                        <ul class="mt-4 space-y-4">
+                            <li>
+                                <a
+                                    href="https://x.com/souravdotdev"
+                                    class="text-base text-gray-400 hover:text-white"
+                                    >Twitter</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://github.com/dsouravcom"
+                                    class="text-base text-gray-400 hover:text-white"
+                                    >GitHub</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div
+                    class="mt-12 border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center"
                 >
-              </li>
-              <li>
-                <a href="https://github.com/dsouravcom" class="text-base text-gray-400 hover:text-white"
-                  >GitHub</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div
-          class="mt-12 border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center"
-        >
-          <p class="text-base text-gray-400">
-            &copy; <span id="currentYear"></span> Sorti. All rights reserved.
-          </p>
-          <div class="mt-4 md:mt-0 flex space-x-6">
-            <a href="https://x.com/souravdotdev" class="text-gray-400 hover:text-white">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="https://github.com/dsouravcom" class="text-gray-400 hover:text-white">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
+                    <p class="text-base text-gray-400">
+                        &copy; <span id="currentYear"></span> Sorti. All rights
+                        reserved.
+                    </p>
+                    <div class="mt-4 md:mt-0 flex space-x-6">
+                        <a
+                            href="https://x.com/souravdotdev"
+                            class="text-gray-400 hover:text-white"
+                        >
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a
+                            href="https://github.com/dsouravcom"
+                            class="text-gray-400 hover:text-white"
+                        >
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
-    <!-- jQuery for URL Shortener Functionality -->
-    <script>
-      $(document).ready(function () {
-        // Set current year in footer
-        document.getElementById("currentYear").textContent =
-          new Date().getFullYear();
-        // URL Shortening Function
-        $("#shortenBtn").click(function () {
-          const longUrl = $("#longUrl").val().trim();
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-          if (!longUrl) {
-            alert("Please enter a URL to shorten");
-            return;
-          }
+        <!-- jQuery for URL Shortener Functionality -->
+        <script>
+            $(document).ready(function () {
+                // Set current year in footer
+                document.getElementById("currentYear").textContent =
+                    new Date().getFullYear();
+                // URL Shortening Function
+                $("#shortenBtn").click(function () {
+                    const longUrl = $("#longUrl").val().trim();
 
-          // Show loading state
-          $("#shortenBtn").html(
-            '<i class="fas fa-spinner fa-spin"></i> Shortening...'
-          );
+                    if (!longUrl) {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            text: "Please enter a URL to shorten!",
+                        });
+                        return;
+                    }
 
-          // Make actual API call to the server
-          fetch("https://sorti.in/short", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ url: longUrl }),
-          })
-            .then((response) => {
-              if (!response.ok) {
-                throw new Error("Network response was not ok");
-              }
-              return response.json();
-            })
-            .then((data) => {
-              // Use the short URL returned from the server
-              currentShortUrl = `https://sorti.in/${data.short_url}`;
+                    // Validate URL format
+                    const urlPattern =
+                        /^(https?:\/\/)?([\w-]+(\.[\w-]+)+)(:\d+)?(\/.*)?$/;
+                    if (!urlPattern.test(longUrl)) {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            text: "Please enter a valid URL!",
+                        });
+                        return;
+                    }
 
-              // Display result
-              $("#shortUrl").val(currentShortUrl);
-              $("#inputForm").addClass("hidden");
-              $("#resultContainer").removeClass("hidden");
-            })
-            .catch((error) => {
-              console.error("Error shortening URL:", error);
-              alert("Failed to shorten URL. Please try again.");
-            })
-            .finally(() => {
-              // Reset button state regardless of success/failure
-              $("#shortenBtn").html("Shorten URL");
+                    // Show loading state
+                    $("#shortenBtn").html(
+                        '<i class="fas fa-spinner fa-spin"></i> Shortening...'
+                    );
+
+                    // Make actual API call to the server
+                    fetch("https://sorti.in/short", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({ url: longUrl }),
+                    })
+                        .then((response) => {
+                            if (!response.ok) {
+                                throw new Error("Network response was not ok");
+                            }
+                            return response.json();
+                        })
+                        .then((data) => {
+                            // Use the short URL returned from the server
+                            currentShortUrl = `https://sorti.in/${data.short_url}`;
+
+                            // Display result
+                            $("#shortUrl").val(currentShortUrl);
+                            $("#inputForm").addClass("hidden");
+                            $("#resultContainer").removeClass("hidden");
+                        })
+                        .catch((error) => {
+                            console.error("Error shortening URL:", error);
+                            Swal.fire({
+                                icon: "error",
+                                title: "Error",
+                                text: "Failed to shorten URL. Please try again.",
+                            });
+                        })
+                        .finally(() => {
+                            // Reset button state regardless of success/failure
+                            $("#shortenBtn").html("Shorten URL");
+                        });
+                });
+
+                // Copy Function
+                $("#copyBtn").click(function () {
+                    const shortUrl = $("#shortUrl");
+                    shortUrl.select();
+                    document.execCommand("copy");
+
+                    // Change button text temporarily
+                    $(this).html('<i class="fas fa-check"></i> Copied!');
+                    setTimeout(() => {
+                        $(this).html("Copy");
+                    }, 2000);
+                });
+
+                // Create New Link Button
+                $("#newLinkBtn").click(function () {
+                    $("#longUrl").val("");
+                    $("#inputForm").removeClass("hidden");
+                    $("#resultContainer").addClass("hidden");
+                    $("#trackClicks").prop("checked", false);
+                });
+
+                // View Analytics Button - sets the ID in localStorage before redirecting
+                $("#viewAnalyticsBtn").click(function (e) {
+                    localStorage.setItem("currentAnalyticsId", analyticsId);
+                });
             });
-        });
-
-        // Copy Function
-        $("#copyBtn").click(function () {
-          const shortUrl = $("#shortUrl");
-          shortUrl.select();
-          document.execCommand("copy");
-
-          // Change button text temporarily
-          $(this).html('<i class="fas fa-check"></i> Copied!');
-          setTimeout(() => {
-            $(this).html("Copy");
-          }, 2000);
-        });
-
-        // Create New Link Button
-        $("#newLinkBtn").click(function () {
-          $("#longUrl").val("");
-          $("#inputForm").removeClass("hidden");
-          $("#resultContainer").addClass("hidden");
-          $("#trackClicks").prop("checked", false);
-        });
-
-        // View Analytics Button - sets the ID in localStorage before redirecting
-        $("#viewAnalyticsBtn").click(function (e) {
-          localStorage.setItem("currentAnalyticsId", analyticsId);
-        });
-      });
-    </script>
-    <!-- Schema.org structured data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Sorti",
-        "url": "https://www.sorti.in/",
-        "description": "Free URL shortener tool to create short, memorable links. Track clicks, secure links, and boost your online presence with our ad-free service.",
-        "applicationCategory": "UtilityApplication",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "operatingSystem": "All",
-        "image": "https://res.cloudinary.com/dzjujoqyi/image/upload/v1744299992/sorti-meta-image.png",
-        "datePublished": "2025-01-01",
-        "author": {
-          "@type": "Organization",
-          "name": "Sorti"
-        },
-        "creator": {
-          "@type": "Organization",
-          "name": "Sorti"
-        },
-        "potentialAction": {
-          "@type": "UseAction",
-          "target": "https://www.sorti.in/"
-        },
-        "featureList": [
-          "Free URL shortening",
-          "Click analytics",
-          "Secure links",
-          "No ads",
-          "Unlimited links"
-        ],
-        "sameAs": ["https://x.com/souravdotdev", "https://github.com/dsouravcom"]
-      }
-    </script>
-  </body>
+        </script>
+        <!-- Schema.org structured data -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebApplication",
+                "name": "Sorti",
+                "url": "https://www.sorti.in/",
+                "description": "Free URL shortener tool to create short, memorable links. Track clicks, secure links, and boost your online presence with our ad-free service.",
+                "applicationCategory": "UtilityApplication",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                },
+                "operatingSystem": "All",
+                "image": "https://res.cloudinary.com/dzjujoqyi/image/upload/v1744299992/sorti-meta-image.png",
+                "datePublished": "2025-01-01",
+                "author": {
+                    "@type": "Organization",
+                    "name": "Sorti"
+                },
+                "creator": {
+                    "@type": "Organization",
+                    "name": "Sorti"
+                },
+                "potentialAction": {
+                    "@type": "UseAction",
+                    "target": "https://www.sorti.in/"
+                },
+                "featureList": [
+                    "Free URL shortening",
+                    "Click analytics",
+                    "Secure links",
+                    "No ads",
+                    "Unlimited links"
+                ],
+                "sameAs": [
+                    "https://x.com/souravdotdev",
+                    "https://github.com/dsouravcom"
+                ]
+            }
+        </script>
+    </body>
 </html>
