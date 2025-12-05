@@ -1,22 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Support Sorti | Keep Our URL Shortener Free & Ad-Free</title>
+        <title>Privacy Policy | Sorti</title>
         <meta
             name="description"
-            content="Support Sorti to keep our URL shortener service free, ad-free, and accessible to everyone. Choose from monthly supporter plans or one-time donations."
+            content="Privacy Policy for Sorti URL Shortener."
         />
-        <meta
-            name="keywords"
-            content="support URL shortener, donate to Sorti, premium URL shortener, ad-free link shortener, contribute to Sorti"
-        />
-        <meta
-            itemprop="image"
-            content="https://res.cloudinary.com/dzjujoqyi/image/upload/v1744299992/sorti-meta-image.png"
-        />
-        <link rel="canonical" href="https://www.sorti.in/support/" />
+
+        <!-- Favicons -->
         <link
             rel="icon"
             type="image/png"
@@ -40,6 +33,7 @@
             rel="stylesheet"
         />
 
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.tailwindcss.com"></script>
         <link
             rel="stylesheet"
@@ -60,13 +54,23 @@
                             surface: "#ffffff",
                             background: "#f8fafc", // Slate 50
                         },
-                        boxShadow: {
-                            soft: "0 20px 40px -15px rgba(0, 0, 0, 0.05)",
-                            glow: "0 0 20px rgba(255, 138, 101, 0.3)",
-                        },
                     },
                 },
             };
+        </script>
+        <!-- sitebehaviour analytics -->
+        <script type="text/javascript">
+            (function () {
+                var sbSiteSecret = "223d690e-337f-46f1-bc92-0c1778e6ece4";
+                window.sitebehaviourTrackingSecret = sbSiteSecret;
+                var scriptElement = document.createElement("script");
+                scriptElement.async = true;
+                scriptElement.id = "site-behaviour-script-v2";
+                scriptElement.src =
+                    "https://sitebehaviour-cdn.fra1.cdn.digitaloceanspaces.com/index.min.js?sitebehaviour-secret=" +
+                    sbSiteSecret;
+                document.head.appendChild(scriptElement);
+            })();
         </script>
         <style>
             body {
@@ -80,17 +84,11 @@
                 -webkit-backdrop-filter: blur(12px);
                 border-bottom: 1px solid rgba(226, 232, 240, 0.6);
             }
-            .hover-lift {
-                transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-                    box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            }
-            .hover-lift:hover {
-                transform: translateY(-4px);
-                box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.1);
-            }
         </style>
     </head>
-    <body class="antialiased selection:bg-primary selection:text-white">
+    <body
+        class="antialiased selection:bg-primary selection:text-white flex flex-col min-h-screen"
+    >
         <!-- Navigation -->
         <nav
             class="fixed w-full z-50 top-0 glass-nav transition-all duration-300"
@@ -137,7 +135,7 @@
                         >
                         <a
                             href="support.html"
-                            class="text-sm font-medium text-brand hover:text-accent transition-colors"
+                            class="text-sm font-medium text-secondary hover:text-primary transition-colors"
                             >Support</a
                         >
                         <a
@@ -180,7 +178,7 @@
                     >
                     <a
                         href="support.html"
-                        class="block px-3 py-3 text-base font-medium text-primary bg-slate-50 rounded-lg"
+                        class="block px-3 py-3 text-base font-medium text-secondary hover:text-primary hover:bg-slate-50 rounded-lg"
                         >Support</a
                     >
                     <a
@@ -193,118 +191,65 @@
         </nav>
 
         <!-- Main Content -->
-        <div class="pt-32 pb-20 min-h-screen relative overflow-hidden">
-            <!-- Decorative background elements -->
-            <div
-                class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none"
-            >
+        <main class="flex-grow pt-32 pb-20">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-4xl font-bold text-primary mb-8">
+                    Privacy Policy
+                </h1>
                 <div
-                    class="absolute top-20 left-1/4 w-96 h-96 bg-amber-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"
-                ></div>
-                <div
-                    class="absolute bottom-20 right-1/4 w-96 h-96 bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"
-                ></div>
-            </div>
+                    class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100"
+                >
+                    <div class="space-y-6 text-secondary leading-relaxed">
+                        <p>
+                            At Sorti, we are committed to protecting your
+                            privacy. We believe in collecting only what is
+                            necessary to provide our service.
+                        </p>
 
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h1
-                        class="text-4xl md:text-5xl font-bold text-primary mb-6 leading-tight"
-                    >
-                        Support Our
-                        <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600"
-                            >Mission</span
-                        >
-                    </h1>
-                    <p class="text-xl text-secondary leading-relaxed">
-                        Sorti is free, open-source, and ad-free. Your support
-                        helps us keep servers running and development active.
-                    </p>
-                </div>
-
-                <!-- Support Options -->
-                <div class="max-w-md mx-auto">
-                    <!-- Buy Me a Coffee -->
-                    <div
-                        class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover-lift flex flex-col text-center relative overflow-hidden"
-                    >
-                        <div
-                            class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-amber-400 to-orange-500"
-                        ></div>
-                        <div class="mb-6">
-                            <div
-                                class="w-20 h-20 mx-auto bg-amber-50 rounded-full flex items-center justify-center text-amber-500 text-3xl mb-6 shadow-sm"
-                            >
-                                <i class="fas fa-coffee"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-primary">
-                                Buy us a coffee
-                            </h3>
-                            <p class="text-secondary mt-2">
-                                If you like our work, you can support us by
-                                buying a coffee. It helps us keep the servers
-                                running!
+                        <div>
+                            <h2 class="text-xl font-bold text-primary mb-3">
+                                Data Collection
+                            </h2>
+                            <p>
+                                We don't collect or store any user details. We
+                                do not require you to create an account or
+                                provide personal information to use our URL
+                                shortening service.
                             </p>
                         </div>
-                        <div class="mb-8">
-                            <span
-                                class="text-5xl font-bold text-primary tracking-tight"
-                                >$5</span
-                            >
-                            <span class="text-secondary font-medium"
-                                >/coffee</span
-                            >
-                        </div>
-                        <a
-                            href="https://www.buymeacoffee.com/dsourav"
-                            target="_blank"
-                            class="mt-auto block w-full py-4 px-6 bg-gradient-to-r from-amber-400 to-orange-500 text-white font-bold text-center rounded-xl hover:shadow-lg hover:shadow-orange-200 transition-all transform hover:-translate-y-1"
-                        >
-                            Buy a Coffee
-                        </a>
-                    </div>
-                </div>
 
-                <!-- FAQ / Info -->
-                <div class="max-w-3xl mx-auto mt-24">
-                    <h2
-                        class="text-2xl font-bold text-primary mb-8 text-center"
-                    >
-                        Why support us?
-                    </h2>
-                    <div class="space-y-6">
-                        <div
-                            class="bg-white p-6 rounded-2xl border border-slate-100"
-                        >
-                            <h3 class="font-bold text-primary mb-2">
-                                Where does the money go?
-                            </h3>
-                            <p class="text-secondary">
-                                100% of donations go towards server costs,
-                                domain renewals, and development tools. We don't
-                                take a salary.
+                        <div>
+                            <h2 class="text-xl font-bold text-primary mb-3">
+                                Link Storage
+                            </h2>
+                            <p>
+                                We just store the links for the uses of the
+                                user. We maintain a database of the original
+                                long URLs and their corresponding short codes to
+                                enable redirection.
                             </p>
                         </div>
-                        <div
-                            class="bg-white p-6 rounded-2xl border border-slate-100"
-                        >
-                            <h3 class="font-bold text-primary mb-2">
-                                Is it tax deductible?
-                            </h3>
-                            <p class="text-secondary">
-                                Currently, we are not a registered non-profit,
-                                so donations are likely not tax-deductible in
-                                your jurisdiction.
+
+                        <div>
+                            <h2 class="text-xl font-bold text-primary mb-3">
+                                Analytics
+                            </h2>
+                            <p>
+                                We used a cookie based analytics for only
+                                checking the traffic region and devices. This
+                                helps us understand how our service is being
+                                used and optimize it for different regions and
+                                platforms. This data is aggregated and does not
+                                personally identify you.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
 
         <!-- Footer -->
-        <footer class="bg-white border-t border-slate-200 pt-16 pb-8">
+        <footer class="bg-white border-t border-slate-200 pt-16 pb-8 mt-auto">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
                     <div class="col-span-2 md:col-span-1">
@@ -312,11 +257,11 @@
                             href="index.html"
                             class="flex items-center gap-2 mb-6"
                         >
-                            <div class="bg-brand text-white rounded-lg">
+                            <div class="bg-brand text-white p-1.5 rounded-lg">
                                 <img
                                     src="favicon-96x96.png"
                                     alt="Sorti Logo"
-                                    class="size-8"
+                                    class="w-5 h-5"
                                 />
                             </div>
                             <span class="text-lg font-bold text-primary"
@@ -415,15 +360,16 @@
         </footer>
 
         <script>
-            document
-                .getElementById("mobile-menu-btn")
-                .addEventListener("click", function () {
-                    document
-                        .getElementById("mobile-menu")
-                        .classList.toggle("hidden");
+            $(document).ready(function () {
+                // Mobile Menu Toggle
+                $("#mobile-menu-btn").click(function () {
+                    $("#mobile-menu").toggleClass("hidden");
                 });
-            document.getElementById("currentYear").textContent =
-                new Date().getFullYear();
+
+                // Set current year
+                document.getElementById("currentYear").textContent =
+                    new Date().getFullYear();
+            });
         </script>
     </body>
 </html>
