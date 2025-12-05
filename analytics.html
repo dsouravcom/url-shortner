@@ -1,660 +1,750 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sorti Analytics | Track Your Short URL Performance</title>
-    <meta
-      name="description"
-      content="Track clicks and view detailed analytics for your Sorti links"
-    />
-    <meta
-      name="keywords"
-      content="URL analytics, link tracking, Sorti analytics, Sorti stats"
-    />
-    <meta
-      itemprop="image"
-      content="https://res.cloudinary.com/dzjujoqyi/image/upload/v1744299992/sorti-meta-image.png"
-    />
-    <link rel="canonical" href="https://www.sorti.in/analytics/" />
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <style>
-      .gradient-bg {
-        background: linear-gradient(135deg, #4f46e5 0%, #10b981 100%);
-      }
-      .btn-primary {
-        background-color: #4f46e5;
-        transition: all 0.3s ease;
-      }
-      .btn-primary:hover {
-        background-color: #4338ca;
-        transform: translateY(-2px);
-      }
-      .analytics-card {
-        transition: all 0.3s ease;
-      }
-      .analytics-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-      }
-      #loadingSpinner {
-        display: none;
-      }
-    </style>
-  </head>
-  <body class="font-sans antialiased text-gray-800 bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-          <div class="flex items-center">
-            <div class="flex-shrink-0 flex items-center">
-              <i class="text-primary size-10 text-2xl mr-2"
-                ><img src="favicon.svg" alt="Sorti Logo"
-              /></i>
-              <span class="text-xl font-bold text-dark">Sorti</span>
-            </div>
-          </div>
-          <div class="hidden sm:ml-6 sm:flex sm:items-center space-x-8">
-            <a
-              href="index.html"
-              class="text-gray-500 hover:text-dark px-3 py-2 text-sm font-medium"
-              >Home</a
-            >
-            <a
-              href="index.html#features"
-              class="text-primary hover:text-dark px-3 py-2 text-sm font-medium"
-              >Analytics</a
-            >
-            <a
-              href="https://url.dsourav.com/"
-              referrerpolicy="no-referrer"
-              class="text-gray-500 hover:text-dark px-3 py-2 text-sm font-medium border-b-2 border-primary"
-              >Expand a Short URL</a
-            >
-            <a
-              href="index.html#features"
-              class="text-gray-500 hover:text-dark px-3 py-2 text-sm font-medium"
-              >Features</a
-            >
-            <a
-              href="index.html#how-it-works"
-              class="text-gray-500 hover:text-dark px-3 py-2 text-sm font-medium"
-              >How It Works</a
-            >
-            <a
-              href="index.html#about"
-              class="text-gray-500 hover:text-dark px-3 py-2 text-sm font-medium"
-              >About Us</a
-            >
-            <a
-              href="support.html"
-              class="text-gray-500 hover:text-dark px-3 py-2 text-sm font-medium"
-              >Support</a
-            >
-          </div>
-        </div>
-      </div>
-    </nav>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sorti Analytics | Track Your Short URL Performance</title>
+        <meta
+            name="description"
+            content="Track clicks and view detailed analytics for your Sorti links"
+        />
+        <meta
+            name="keywords"
+            content="URL analytics, link tracking, Sorti analytics, Sorti stats"
+        />
+        <meta
+            itemprop="image"
+            content="https://res.cloudinary.com/dzjujoqyi/image/upload/v1744299992/sorti-meta-image.png"
+        />
+        <link rel="canonical" href="https://www.sorti.in/analytics/" />
+        <link
+            rel="icon"
+            type="image/png"
+            href="favicon-96x96.png"
+            sizes="96x96"
+        />
+        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="apple-touch-icon.png"
+        />
+        <link rel="manifest" href="site.webmanifest" />
 
-    <!-- Analytics Header -->
-    <div class="gradient-bg text-white py-12">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <h1
-            class="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl mb-4"
-          >
-            Sorti URL Analytics Tracker
-          </h1>
-          <p class="max-w-2xl mx-auto text-xl text-blue-100">
-            View detailed click statistics for your short URLs
-          </p>
-        </div>
-      </div>
-    </div>
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
 
-    <!-- Analytics Form -->
-    <div class="py-12 bg-white">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-gray-50 rounded-lg shadow-md p-6">
-          <div class="text-center mb-6">
-            <h2 class="text-2xl font-bold text-gray-900">
-              Enter Your Short URL
-            </h2>
-            <p class="mt-2 text-gray-600">
-              Paste your Sorti URL to view its analytics
-            </p>
-          </div>
-
-          <div class="flex flex-col md:flex-row gap-4">
-            <input
-              type="url"
-              id="analyticsUrl"
-              placeholder="https://sorti.in/abc123"
-              class="flex-grow px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-              required
-            />
-            <button
-              id="fetchAnalyticsBtn"
-              class="btn-primary px-6 py-3 rounded-lg font-medium text-white"
-            >
-              View Analytics
-            </button>
-          </div>
-
-          <div id="loadingSpinner" class="mt-4 text-center">
-            <div class="inline-flex items-center">
-              <svg
-                class="animate-spin -ml-1 mr-3 h-5 w-5 text-indigo-600"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <circle
-                  class="opacity-25"
-                  cx="12"
-                  cy="12"
-                  r="10"
-                  stroke="currentColor"
-                  stroke-width="4"
-                ></circle>
-                <path
-                  class="opacity-75"
-                  fill="currentColor"
-                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                ></path>
-              </svg>
-              <span>Fetching analytics data...</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Analytics Results -->
-    <div id="analyticsResults" class="py-12 bg-gray-50 hidden">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-white rounded-lg shadow-md overflow-hidden mb-8">
-          <div class="p-6">
-            <h2 class="text-xl font-bold text-gray-900 mb-4">
-              Analytics Summary
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div class="analytics-card bg-gray-50 rounded-lg p-6">
-                <div class="flex items-center">
-                  <div
-                    class="p-3 rounded-full bg-indigo-100 text-indigo-600 mr-4"
-                  >
-                    <i class="fas fa-mouse-pointer"></i>
-                  </div>
-                  <div>
-                    <p class="text-sm font-medium text-gray-500">
-                      Total Clicks
-                    </p>
-                    <p
-                      class="text-2xl font-bold text-gray-900"
-                      id="totalClicks"
-                    >
-                      0
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="analytics-card bg-gray-50 rounded-lg p-6">
-                <div class="flex items-center">
-                  <div
-                    class="p-3 rounded-full bg-green-100 text-green-600 mr-4"
-                  >
-                    <i class="fas fa-calendar-day"></i>
-                  </div>
-                  <div>
-                    <p class="text-sm font-medium text-gray-500">First Click</p>
-                    <p class="text-2xl font-bold text-gray-900" id="firstClick">
-                      -
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="analytics-card bg-gray-50 rounded-lg p-6">
-                <div class="flex items-center">
-                  <div class="p-3 rounded-full bg-blue-100 text-blue-600 mr-4">
-                    <i class="fas fa-clock"></i>
-                  </div>
-                  <div>
-                    <p class="text-sm font-medium text-gray-500">Last Click</p>
-                    <p class="text-2xl font-bold text-gray-900" id="lastClick">
-                      -
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <div class="p-6">
-              <h2 class="text-xl font-bold text-gray-900 mb-4">
-                Clicks Over Time
-              </h2>
-              <div class="h-80">
-                <canvas id="clicksChart"></canvas>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <div class="p-6">
-              <h2 class="text-xl font-bold text-gray-900 mb-4">
-                Daily Click Data
-              </h2>
-              <div class="overflow-x-auto">
-                <table class="min-w-full divide-y divide-gray-200">
-                  <thead class="bg-gray-50">
-                    <tr>
-                      <th
-                        scope="col"
-                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                      >
-                        Date
-                      </th>
-                      <th
-                        scope="col"
-                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                      >
-                        Clicks
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody
-                    id="clickDataTable"
-                    class="bg-white divide-y divide-gray-200"
-                  >
-                    <!-- Data will be inserted here by JavaScript -->
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Error Message -->
-    <div
-      id="errorMessage"
-      class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 hidden"
-    >
-      <div class="bg-white rounded-lg shadow-xl p-6 max-w-md w-full">
-        <div class="flex justify-between items-start">
-          <h3 class="text-lg font-medium text-gray-900" id="errorTitle">
-            Error
-          </h3>
-          <button id="closeErrorBtn" class="text-gray-400 hover:text-gray-500">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-        <div class="mt-4">
-          <p class="text-sm text-gray-500" id="errorText">
-            An error occurred while fetching analytics data.
-          </p>
-        </div>
-        <div class="mt-6 text-right">
-          <button
-            id="confirmErrorBtn"
-            class="btn-primary px-4 py-2 rounded-md text-sm font-medium text-white"
-          >
-            OK
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white">
-      <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div>
-            <h3
-              class="text-sm font-semibold text-gray-300 tracking-wider uppercase"
-            >
-              Product
-            </h3>
-            <ul class="mt-4 space-y-4">
-              <li>
-                <a
-                  href="#features"
-                  class="text-base text-gray-400 hover:text-white"
-                  >Features</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#how-it-works"
-                  class="text-base text-gray-400 hover:text-white"
-                  >How It Works</a
-                >
-              </li>
-              <li>
-                <a
-                  href="support.html"
-                  class="text-base text-gray-400 hover:text-white"
-                  >Support</a
-                >
-              </li>
-              <li>
-                <a
-                  href="analytics.html"
-                  class="text-base text-gray-400 hover:text-white"
-                  >Analyse a Sorti URL</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://url.dsourav.com/"
-                  class="text-base text-gray-400 hover:text-white"
-                  >Expand a Short URL</a
-                >
-              </li>
-            </ul>
-          </div>
-          <!-- <div>
-            <h3
-              class="text-sm font-semibold text-gray-300 tracking-wider uppercase"
-            >
-              Legal
-            </h3>
-            <ul class="mt-4 space-y-4">
-              <li>
-                <a href="#" class="text-base text-gray-400 hover:text-white"
-                  >Privacy</a
-                >
-              </li>
-              <li>
-                <a href="#" class="text-base text-gray-400 hover:text-white"
-                  >Terms</a
-                >
-              </li>
-              <li>
-                <a href="#" class="text-base text-gray-400 hover:text-white"
-                  >Cookie Policy</a
-                >
-              </li>
-            </ul>
-          </div> -->
-          <div>
-            <h3
-              class="text-sm font-semibold text-gray-300 tracking-wider uppercase"
-            >
-              Connect
-            </h3>
-            <ul class="mt-4 space-y-4">
-              <li>
-                <a href="https://x.com/souravdotdev" class="text-base text-gray-400 hover:text-white"
-                  >Twitter</a
-                >
-              </li>
-              <li>
-                <a href="https://github.com/dsouravcom" class="text-base text-gray-400 hover:text-white"
-                  >GitHub</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div
-          class="mt-12 border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center"
-        >
-          <p class="text-base text-gray-400">
-            &copy; <span id="currentYear"></span> Sorti. All rights reserved.
-          </p>
-          <div class="mt-4 md:mt-0 flex space-x-6">
-            <a href="https://x.com/souravdotdev" class="text-gray-400 hover:text-white">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="https://github.com/dsouravcom" class="text-gray-400 hover:text-white">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Set current year in footer
-        document.getElementById("currentYear").textContent =
-          new Date().getFullYear();
-
-        const fetchBtn = document.getElementById("fetchAnalyticsBtn");
-        const analyticsUrl = document.getElementById("analyticsUrl");
-        const analyticsResults = document.getElementById("analyticsResults");
-        const loadingSpinner = document.getElementById("loadingSpinner");
-        const errorMessage = document.getElementById("errorMessage");
-        const closeErrorBtn = document.getElementById("closeErrorBtn");
-        const confirmErrorBtn = document.getElementById("confirmErrorBtn");
-
-        let clicksChart = null;
-
-        // Function to show error message
-        function showError(title, message) {
-          document.getElementById("errorTitle").textContent = title;
-          document.getElementById("errorText").textContent = message;
-          errorMessage.classList.remove("hidden");
-        }
-
-        // Close error message
-        closeErrorBtn.addEventListener("click", () =>
-          errorMessage.classList.add("hidden")
-        );
-        confirmErrorBtn.addEventListener("click", () =>
-          errorMessage.classList.add("hidden")
-        );
-
-        // Fetch analytics data
-        fetchBtn.addEventListener("click", async function () {
-          const url = analyticsUrl.value.trim();
-
-          if (!url) {
-            showError("Input Error", "Please enter a URL to analyze");
-            return;
-          }
-
-          // validate URL with advance regex
-          const urlPattern =
-            /^(https?:\/\/)?(www\.)?sorti\.in\/[a-zA-Z0-9]+$/;
-          if (!urlPattern.test(url)) {
-            showError(
-              "Invalid URL",
-              "Please enter a valid Sorti URL (e.g., https://sorti.in/abc123)"
-            );
-            return;
-          }
-
-          // Extract the short code from the URL
-          let shortCode;
-          try {
-            const urlObj = new URL(url);
-            shortCode = urlObj.pathname.substring(1); // Remove leading slash
-          } catch (e) {
-            showError("Invalid URL", "Please enter a valid Sorti URL");
-            return;
-          }
-
-          if (!shortCode) {
-            showError(
-              "Invalid URL",
-              "The URL should contain a short code (e.g., https://sorti.in/abc123)"
-            );
-            return;
-          }
-
-          // Show loading spinner
-          loadingSpinner.style.display = "block";
-          analyticsResults.classList.add("hidden");
-
-          try {
-            // Fetch data from API
-            const response = await fetch(
-              `https://sorti.in/analytics/${shortCode}`
-            );
-
-            if (!response.ok) {
-              throw new Error(
-                `API request failed with status ${response.status}`
-              );
-            }
-
-            const data = await response.json();
-
-            // Update summary data
-            document.getElementById("totalClicks").textContent = data.totalView;
-
-            // Process analytics data
-            const clicksByDate = {};
-            let firstClickDate = null;
-            let lastClickDate = null;
-
-            // Convert timestamps to dates and group by day
-            data.analytics.forEach((item) => {
-              // Convert timestamp to Date object
-              const clickDate = new Date(item.timeStamp);
-
-              // Format date as YYYY-MM-DD for consistent grouping
-              const dateKey = clickDate.toISOString().split("T")[0];
-
-              // Count clicks per day
-              if (!clicksByDate[dateKey]) {
-                clicksByDate[dateKey] = 0;
-              }
-              clicksByDate[dateKey]++;
-
-              // Track first and last click dates
-              if (!firstClickDate || clickDate < firstClickDate) {
-                firstClickDate = clickDate;
-              }
-              if (!lastClickDate || clickDate > lastClickDate) {
-                lastClickDate = clickDate;
-              }
-            });
-
-            // Update first and last click dates with formatted dates
-            if (firstClickDate) {
-              document.getElementById("firstClick").textContent =
-                firstClickDate.toLocaleDateString();
-            }
-            if (lastClickDate) {
-              document.getElementById("lastClick").textContent =
-                lastClickDate.toLocaleDateString();
-            }
-
-            // Prepare data for chart and table
-            const sortedAnalytics = Object.entries(clicksByDate).sort(
-              (a, b) => {
-                return new Date(a[0]) - new Date(b[0]);
-              }
-            );
-
-            const dates = sortedAnalytics.map((item) => item[0]);
-            const clicks = sortedAnalytics.map((item) => item[1]);
-
-            // Update click data table
-            const tableBody = document.getElementById("clickDataTable");
-            tableBody.innerHTML = "";
-
-            sortedAnalytics.forEach(([date, count]) => {
-              const row = document.createElement("tr");
-              const dateCell = document.createElement("td");
-              const clicksCell = document.createElement("td");
-
-              dateCell.className =
-                "px-6 py-4 whitespace-nowrap text-sm text-gray-500";
-              dateCell.textContent = new Date(date).toLocaleDateString();
-
-              clicksCell.className =
-                "px-6 py-4 whitespace-nowrap text-sm text-gray-900";
-              clicksCell.textContent = count;
-
-              row.appendChild(dateCell);
-              row.appendChild(clicksCell);
-              tableBody.appendChild(row);
-            });
-
-            // Create or update chart
-            const ctx = document.getElementById("clicksChart").getContext("2d");
-
-            if (clicksChart) {
-              clicksChart.destroy();
-            }
-
-            clicksChart = new Chart(ctx, {
-              type: "line",
-              data: {
-                labels: dates.map((date) =>
-                  new Date(date).toLocaleDateString()
-                ),
-                datasets: [
-                  {
-                    label: "Clicks",
-                    data: clicks,
-                    backgroundColor: "rgba(79, 70, 229, 0.1)",
-                    borderColor: "#4F46E5",
-                    borderWidth: 2,
-                    tension: 0.4,
-                    fill: true,
-                  },
-                ],
-              },
-              options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                  legend: {
-                    display: false,
-                  },
-                },
-                scales: {
-                  y: {
-                    beginAtZero: true,
-                    ticks: {
-                      precision: 0,
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['"Plus Jakarta Sans"', "sans-serif"],
+                        },
+                        colors: {
+                            primary: "#1e293b", // Slate 800
+                            secondary: "#64748b", // Slate 500
+                            brand: "#FF8A65", // Deep Orange 300
+                            accent: "#FF8A65", // Map accent to brand
+                            surface: "#ffffff",
+                            background: "#f8fafc", // Slate 50
+                        },
+                        boxShadow: {
+                            soft: "0 20px 40px -15px rgba(0, 0, 0, 0.05)",
+                            glow: "0 0 20px rgba(255, 138, 101, 0.3)",
+                        },
                     },
-                  },
                 },
-              },
-            });
+            };
+        </script>
+        <style>
+            body {
+                font-family: "Plus Jakarta Sans", sans-serif;
+                background-color: #f8fafc;
+                color: #1e293b;
+            }
+            .glass-nav {
+                background: rgba(255, 255, 255, 0.8);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+            }
+            .input-focus-ring:focus-within {
+                box-shadow: 0 0 0 4px rgba(226, 232, 240, 0.5);
+                border-color: #94a3b8;
+            }
+            #loadingSpinner {
+                display: none;
+            }
+        </style>
+    </head>
+    <body class="antialiased selection:bg-primary selection:text-white">
+        <!-- Navigation -->
+        <nav
+            class="fixed w-full z-50 top-0 glass-nav transition-all duration-300"
+        >
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-20 items-center">
+                    <div class="flex items-center gap-3">
+                        <a
+                            href="index.html"
+                            class="flex items-center gap-2 group"
+                        >
+                            <div
+                                class="bg-brand text-white rounded-xl group-hover:scale-105 transition-transform duration-300"
+                            >
+                                <img
+                                    src="favicon-96x96.png"
+                                    alt="Sorti Logo"
+                                    class="size-8"
+                                />
+                            </div>
+                            <span
+                                class="text-xl font-bold tracking-tight text-primary"
+                                >Sorti</span
+                            >
+                        </a>
+                    </div>
 
-            // Show results
-            analyticsResults.classList.remove("hidden");
-          } catch (error) {
-            console.error("Error fetching analytics:", error);
-            showError(
-              "API Error",
-              "Failed to fetch analytics data. Please check the URL and try again."
-            );
-          } finally {
-            loadingSpinner.style.display = "none";
-          }
-        });
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a
+                            href="index.html"
+                            class="text-sm font-medium text-secondary hover:text-primary transition-colors"
+                            >Home</a
+                        >
+                        <a
+                            href="analytics.html"
+                            class="text-sm font-medium text-brand hover:text-accent transition-colors"
+                            >Analytics</a
+                        >
+                        <a
+                            href="index.html#features"
+                            class="text-sm font-medium text-secondary hover:text-primary transition-colors"
+                            >Features</a
+                        >
+                        <a
+                            href="support.html"
+                            class="text-sm font-medium text-secondary hover:text-primary transition-colors"
+                            >Support</a
+                        >
+                        <a
+                            href="https://url.dsourav.com/"
+                            class="px-5 py-2.5 text-sm font-medium text-white bg-brand rounded-full hover:bg-orange-600 transition-all shadow-lg shadow-orange-100 hover:shadow-xl"
+                        >
+                            Expand URL
+                        </a>
+                    </div>
 
-        // Allow pressing Enter in the input field
-        analyticsUrl.addEventListener("keypress", function (e) {
-          if (e.key === "Enter") {
-            fetchBtn.click();
-          }
-        });
-      });
-    </script>
-  </body>
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-btn" class="text-primary p-2">
+                            <i class="fas fa-bars text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div
+                id="mobile-menu"
+                class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full"
+            >
+                <div class="px-4 pt-2 pb-6 space-y-1">
+                    <a
+                        href="index.html"
+                        class="block px-3 py-3 text-base font-medium text-secondary hover:text-primary hover:bg-slate-50 rounded-lg"
+                        >Home</a
+                    >
+                    <a
+                        href="analytics.html"
+                        class="block px-3 py-3 text-base font-medium text-primary bg-slate-50 rounded-lg"
+                        >Analytics</a
+                    >
+                    <a
+                        href="index.html#features"
+                        class="block px-3 py-3 text-base font-medium text-secondary hover:text-primary hover:bg-slate-50 rounded-lg"
+                        >Features</a
+                    >
+                    <a
+                        href="support.html"
+                        class="block px-3 py-3 text-base font-medium text-secondary hover:text-primary hover:bg-slate-50 rounded-lg"
+                        >Support</a
+                    >
+                    <a
+                        href="https://url.dsourav.com/"
+                        class="block px-3 py-3 text-base font-medium text-accent hover:bg-slate-50 rounded-lg"
+                        >Expand URL</a
+                    >
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="pt-32 pb-20 min-h-screen relative overflow-hidden">
+            <!-- Decorative background elements -->
+            <div
+                class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none"
+            >
+                <div
+                    class="absolute top-20 right-1/4 w-96 h-96 bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob"
+                ></div>
+                <div
+                    class="absolute bottom-20 left-1/4 w-96 h-96 bg-amber-100 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animation-delay-2000"
+                ></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h1 class="text-4xl font-bold text-primary mb-4">
+                        Link Analytics
+                    </h1>
+                    <p class="text-lg text-secondary">
+                        Enter your Sorti short URL ID to see detailed
+                        performance metrics.
+                    </p>
+                </div>
+
+                <!-- Search Box -->
+                <div class="max-w-2xl mx-auto mb-16">
+                    <div
+                        class="bg-white p-2 rounded-2xl shadow-soft border border-slate-100 input-focus-ring transition-all duration-300"
+                    >
+                        <div class="flex flex-col sm:flex-row gap-2">
+                            <div class="relative flex-grow">
+                                <div
+                                    class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none"
+                                >
+                                    <span class="text-slate-400 font-medium"
+                                        >sorti.in/</span
+                                    >
+                                </div>
+                                <input
+                                    type="text"
+                                    id="urlIdInput"
+                                    placeholder="e.g. XyZ123"
+                                    class="w-full pl-20 pr-4 py-4 bg-transparent border-none focus:ring-0 text-primary placeholder-slate-300 text-lg"
+                                />
+                            </div>
+                            <button
+                                id="fetchAnalyticsBtn"
+                                class="px-8 py-4 bg-brand text-white font-semibold rounded-xl hover:bg-orange-600 transition-all duration-200 shadow-lg shadow-orange-100 flex items-center justify-center gap-2 whitespace-nowrap"
+                            >
+                                <span>Analyze</span>
+                                <i class="fas fa-chart-line text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        id="errorMsg"
+                        class="mt-4 text-red-500 text-center hidden font-medium"
+                    ></div>
+                </div>
+
+                <!-- Loading Spinner -->
+                <div id="loadingSpinner" class="text-center py-12">
+                    <div
+                        class="inline-block animate-spin rounded-full h-12 w-12 border-4 border-slate-200 border-t-primary"
+                    ></div>
+                    <p class="mt-4 text-secondary font-medium">
+                        Fetching data...
+                    </p>
+                </div>
+
+                <!-- Analytics Dashboard -->
+                <div id="analyticsDashboard" class="hidden space-y-8">
+                    <!-- Overview Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div
+                            class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100"
+                        >
+                            <div class="flex items-center justify-between mb-4">
+                                <h3
+                                    class="text-sm font-bold text-secondary uppercase tracking-wider"
+                                >
+                                    Total Clicks
+                                </h3>
+                                <div
+                                    class="p-2 bg-orange-50 text-brand rounded-lg"
+                                >
+                                    <i class="fas fa-mouse-pointer"></i>
+                                </div>
+                            </div>
+                            <p
+                                class="text-4xl font-bold text-primary"
+                                id="totalClicks"
+                            >
+                                0
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100"
+                        >
+                            <div class="flex items-center justify-between mb-4">
+                                <h3
+                                    class="text-sm font-bold text-secondary uppercase tracking-wider"
+                                >
+                                    Last Clicked
+                                </h3>
+                                <div
+                                    class="p-2 bg-amber-50 text-amber-600 rounded-lg"
+                                >
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                            </div>
+                            <p
+                                class="text-xl font-bold text-primary"
+                                id="lastClicked"
+                            >
+                                Never
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100"
+                        >
+                            <div class="flex items-center justify-between mb-4">
+                                <h3
+                                    class="text-sm font-bold text-secondary uppercase tracking-wider"
+                                >
+                                    Created On
+                                </h3>
+                                <div
+                                    class="p-2 bg-red-50 text-red-600 rounded-lg"
+                                >
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                            </div>
+                            <p
+                                class="text-xl font-bold text-primary"
+                                id="createdDate"
+                            >
+                                -
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Main Chart -->
+                    <div
+                        class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100"
+                    >
+                        <h3 class="text-xl font-bold text-primary mb-6">
+                            Click History
+                        </h3>
+                        <div class="h-80 w-full">
+                            <canvas id="clicksChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Stats -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- Referrers -->
+                        <div
+                            class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100"
+                        >
+                            <h3 class="text-xl font-bold text-primary mb-6">
+                                Top Referrers
+                            </h3>
+                            <div class="overflow-hidden">
+                                <table class="min-w-full text-left text-sm">
+                                    <thead
+                                        class="bg-slate-50 text-secondary font-medium"
+                                    >
+                                        <tr>
+                                            <th class="px-4 py-3 rounded-l-lg">
+                                                Source
+                                            </th>
+                                            <th
+                                                class="px-4 py-3 text-right rounded-r-lg"
+                                            >
+                                                Clicks
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody
+                                        id="referrersList"
+                                        class="divide-y divide-slate-100"
+                                    >
+                                        <!-- Populated by JS -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Locations (Placeholder for future) -->
+                        <div
+                            class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 flex flex-col items-center justify-center text-center"
+                        >
+                            <div
+                                class="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center text-slate-300 text-2xl mb-4"
+                            >
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-primary mb-2">
+                                Geographic Data
+                            </h3>
+                            <p class="text-secondary">
+                                Location tracking coming soon to Sorti
+                                Analytics.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Original URL Info -->
+                    <div
+                        class="bg-slate-900 text-white p-8 rounded-3xl shadow-lg"
+                    >
+                        <h3 class="text-lg font-medium text-slate-300 mb-2">
+                            Original Destination
+                        </h3>
+                        <div class="flex items-center gap-3 break-all">
+                            <i
+                                class="fas fa-external-link-alt text-slate-400"
+                            ></i>
+                            <a
+                                href="#"
+                                id="originalUrlLink"
+                                target="_blank"
+                                class="text-xl font-bold hover:text-blue-300 transition-colors underline decoration-slate-600 underline-offset-4"
+                            >
+                                https://example.com/very-long-url...
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-white border-t border-slate-200 pt-16 pb-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                    <div class="col-span-2 md:col-span-1">
+                        <a
+                            href="index.html"
+                            class="flex items-center gap-2 mb-6"
+                        >
+                            <div class="bg-brand text-white rounded-lg">
+                                <img
+                                    src="favicon-96x96.png"
+                                    alt="Sorti Logo"
+                                    class="size-8"
+                                />
+                            </div>
+                            <span class="text-lg font-bold text-primary"
+                                >Sorti</span
+                            >
+                        </a>
+                        <p class="text-sm text-secondary leading-relaxed">
+                            Making the web more accessible, one link at a time.
+                            Simple, secure, and always free.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-primary mb-6">Product</h4>
+                        <ul class="space-y-4 text-sm text-secondary">
+                            <li>
+                                <a
+                                    href="index.html#features"
+                                    class="hover:text-brand transition-colors"
+                                    >Features</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="analytics.html"
+                                    class="hover:text-brand transition-colors"
+                                    >Analytics</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://url.dsourav.com/"
+                                    class="hover:text-brand transition-colors"
+                                    >Expand URL</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-primary mb-6">Company</h4>
+                        <ul class="space-y-4 text-sm text-secondary">
+                            <li>
+                                <a
+                                    href="index.html#about"
+                                    class="hover:text-brand transition-colors"
+                                    >About</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="support.html"
+                                    class="hover:text-brand transition-colors"
+                                    >Support</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-primary mb-6">Connect</h4>
+                        <div class="flex gap-4">
+                            <a
+                                href="https://x.com/souravdotdev"
+                                class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-secondary hover:bg-brand hover:text-white transition-all"
+                            >
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a
+                                href="https://github.com/dsouravcom"
+                                class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-secondary hover:bg-brand hover:text-white transition-all"
+                            >
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+                >
+                    <p class="text-sm text-secondary">
+                        &copy; <span id="currentYear"></span> Sorti. All rights
+                        reserved.
+                    </p>
+                    <div class="flex gap-6 text-sm text-secondary">
+                        <a href="#" class="hover:text-primary">Privacy</a>
+                        <a href="#" class="hover:text-primary">Terms</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Mobile Menu Toggle
+            document
+                .getElementById("mobile-menu-btn")
+                .addEventListener("click", function () {
+                    document
+                        .getElementById("mobile-menu")
+                        .classList.toggle("hidden");
+                });
+
+            document.getElementById("currentYear").textContent =
+                new Date().getFullYear();
+
+            // Check for ID in localStorage (from index page)
+            const storedId = localStorage.getItem("currentAnalyticsId");
+            if (storedId) {
+                document.getElementById("urlIdInput").value = storedId;
+                // Optional: Auto-fetch if ID is present
+                // fetchAnalytics(storedId);
+                localStorage.removeItem("currentAnalyticsId"); // Clear it
+            }
+
+            document
+                .getElementById("fetchAnalyticsBtn")
+                .addEventListener("click", function () {
+                    const urlId = document
+                        .getElementById("urlIdInput")
+                        .value.trim();
+                    if (!urlId) {
+                        showError("Please enter a URL ID");
+                        return;
+                    }
+                    fetchAnalytics(urlId);
+                });
+
+            function showError(msg) {
+                const el = document.getElementById("errorMsg");
+                el.textContent = msg;
+                el.classList.remove("hidden");
+                setTimeout(() => el.classList.add("hidden"), 3000);
+            }
+
+            function fetchAnalytics(shortId) {
+                // Reset UI
+                document
+                    .getElementById("analyticsDashboard")
+                    .classList.add("hidden");
+                document.getElementById("loadingSpinner").style.display =
+                    "block";
+                document.getElementById("errorMsg").classList.add("hidden");
+
+                // Extract ID if full URL is pasted
+                if (shortId.includes("sorti.in/")) {
+                    shortId = shortId.split("sorti.in/")[1];
+                }
+
+                fetch(`https://sorti.in/analytics/${shortId}`)
+                    .then((response) => {
+                        if (!response.ok)
+                            throw new Error("URL not found or server error");
+                        return response.json();
+                    })
+                    .then((data) => {
+                        updateDashboard(data);
+                        document.getElementById(
+                            "loadingSpinner"
+                        ).style.display = "none";
+                        document
+                            .getElementById("analyticsDashboard")
+                            .classList.remove("hidden");
+                    })
+                    .catch((err) => {
+                        document.getElementById(
+                            "loadingSpinner"
+                        ).style.display = "none";
+                        showError(
+                            "Could not find analytics for this ID. Please check and try again."
+                        );
+                        console.error(err);
+                    });
+            }
+
+            let clicksChartInstance = null;
+
+            function updateDashboard(data) {
+                // Update Summary Cards
+                document.getElementById("totalClicks").textContent =
+                    data.totalClicks || 0;
+
+                // Format Date
+                const dateOptions = {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                };
+                // Assuming API returns createdAt or similar. If not, handle gracefully.
+                // For now, let's assume data structure or just show "N/A" if missing
+                // document.getElementById("createdDate").textContent = ...
+
+                // Last Clicked
+                // Assuming API returns lastClicked
+                // document.getElementById("lastClicked").textContent = ...
+
+                // Original URL
+                const originalUrlText = document.getElementById("originalUrl");
+                const visitBtn = document.getElementById("visitOriginalBtn");
+
+                if (originalUrlText)
+                    originalUrlText.textContent =
+                        data.originalUrl || "Unknown URL";
+                if (visitBtn) visitBtn.href = data.originalUrl || "#";
+
+                // Update Chart
+                const ctx = document
+                    .getElementById("clicksChart")
+                    .getContext("2d");
+
+                if (clicksChartInstance) {
+                    clicksChartInstance.destroy();
+                }
+
+                // Mock data for chart if API doesn't provide time series
+                // In a real scenario, you'd parse data.clicksOverTime
+                const labels = [
+                    "Mon",
+                    "Tue",
+                    "Wed",
+                    "Thu",
+                    "Fri",
+                    "Sat",
+                    "Sun",
+                ];
+                const chartData = [0, 0, 0, 0, 0, 0, data.totalClicks]; // Just showing total at end for demo if no time data
+
+                clicksChartInstance = new Chart(ctx, {
+                    type: "line",
+                    data: {
+                        labels: labels,
+                        datasets: [
+                            {
+                                label: "Clicks",
+                                data: chartData,
+                                borderColor: "#FF8A65",
+                                backgroundColor: "rgba(255, 138, 101, 0.1)",
+                                tension: 0.4,
+                                fill: true,
+                                pointBackgroundColor: "#ffffff",
+                                pointBorderColor: "#FF8A65",
+                                pointBorderWidth: 2,
+                                pointRadius: 4,
+                                pointHoverRadius: 6,
+                            },
+                        ],
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false,
+                            },
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                grid: {
+                                    borderDash: [2, 4],
+                                    color: "#f1f5f9",
+                                    drawBorder: false,
+                                },
+                                ticks: {
+                                    font: {
+                                        family: "'Plus Jakarta Sans', sans-serif",
+                                    },
+                                },
+                            },
+                            x: {
+                                grid: {
+                                    display: false,
+                                    drawBorder: false,
+                                },
+                                ticks: {
+                                    font: {
+                                        family: "'Plus Jakarta Sans', sans-serif",
+                                    },
+                                },
+                            },
+                        },
+                    },
+                });
+
+                // Update Referrers
+                const referrersList = document.getElementById("referrersList");
+                referrersList.innerHTML = "";
+
+                // Mock referrers if not in data
+                const referrers = data.referrers || {
+                    Direct: data.totalClicks,
+                };
+
+                Object.entries(referrers).forEach(([source, count]) => {
+                    const row = `
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-primary font-medium">${source}</td>
+                        <td class="px-4 py-3 text-right text-secondary">${count}</td>
+                    </tr>
+                `;
+                    referrersList.insertAdjacentHTML("beforeend", row);
+                });
+            }
+        </script>
+    </body>
 </html>
